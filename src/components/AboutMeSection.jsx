@@ -13,7 +13,7 @@ function AboutMeSection() {
                     <h1> About Me</h1>
                     <div className={styles.line}></div>
                     
-                    <p> I'm a software developer passionate about leveraging technology and programming to solve real world challenges. My journey in technology has given me extensive experience in web development and process automation, and I am always eager to learn new technologies and methodologies. I also enjoy participating in hackathons and other competitions. My goal is to continue evolving as a developer and contribute to impactful projects.</p>       
+                    <p> I&apos;m a software developer passionate about leveraging technology and programming to solve real world challenges. My journey in technology has given me extensive experience in web development and process automation, and I am always eager to learn new technologies and methodologies. I also enjoy participating in hackathons and other competitions. My goal is to continue evolving as a developer and contribute to impactful projects.</p>       
                 </div>
                 <div className={styles.LTTContainer}>
 
