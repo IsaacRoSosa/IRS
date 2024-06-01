@@ -1,0 +1,89 @@
+.Container{
+    width: 100%;
+   height: fit-content;
+    margin-top: 4%;
+    justify-content: center;
+    display: flex;
+   
+}
+ 
+.blackContainer{
+    width: 90%;
+    height: fit-content;
+
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ExperienceContainer{
+    width: 100%;
+    height: fit-content;
+    border-radius: 25px;
+
+}
+
+.ExperienceContainer h1{
+    font-size: 4em;
+    color: white;
+    position: relative;
+}
+
+.ExperienceContainer h1::after {
+    content: '';
+    position: absolute;
+    left:1px;
+    bottom: -8px; /* Ajusta este valor a tus necesidades */
+    height: 7px; /* Ajusta este valor a tus necesidades */
+    width: 5.5em;
+    background-color: #CBACF9; /* Ajusta este valor a tus necesidades */
+}
+
+
+@media (max-width: 650px){
+    .Container{
+        margin-top: 10%;
+    }
+
+    .ExperienceContainer h1{
+        font-size: 3.3em;
+       
+    }
+   
+    .ExperienceContainer {
+        justify-content: center;
+        align-items: center; /* Centra los elementos verticalmente */
+    }
+    
+}
+@media (max-width: 500px) {
+    .ExperienceContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Centra los elementos verticalmente */
+    }
+  
+    .ExperienceContainer h1{ 
+        font-size: 3em;
+    }
+
+    .aboutMeContainer p{
+        font-size: 1.4em;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+    .ExperienceContainer {
+        display: flex;
+
+        justify-content: center;
+        align-items: center; /* Centra los elementos verticalmente */
+    }
+    .ExperienceContainer h1{
+      font-size: 3em;
+     
+    }
+    
+}

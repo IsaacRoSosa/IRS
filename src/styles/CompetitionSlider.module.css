@@ -1,0 +1,48 @@
+.slider {
+  position: relative;
+}
+
+.slide {
+  padding: 10px; 
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nextArrow {
+  right: 10px;
+}
+
+.prevArrow {
+  left: 10px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #fff;
+}
+
+.slick-center .card {
+  transform: scale(1.2);
+  transition: transform 0.3s;
+}
+
+@media (max-width: 1024px) {
+  .slide {
+    padding: 10px; 
+  }
+}
+
+@media (max-width: 750px) {
+  .slide {
+    padding: 10px; 
+  }
+}

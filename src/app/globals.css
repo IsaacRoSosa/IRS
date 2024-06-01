@@ -1,0 +1,10 @@
+body {
+  background-color: #000319; /* Cambia esto al color que prefieras */
+  margin: 0; /* Esto eliminará todo el margen */
+  padding: 0; /* Esto eliminará todo el padding */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+

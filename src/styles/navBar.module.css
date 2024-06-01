@@ -1,0 +1,154 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,600&display=swap');
+
+
+.banner{
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    background: linear-gradient(to right, #04071D, #2b1645);
+    position: fixed;
+    top: 0%;
+    min-height: fit-content;
+    align-items: center;
+    z-index: 100;
+}
+
+.imageContainer{
+    width: 20%;
+    height:100%;
+
+}
+
+.imageContainer img{
+
+    width: 70px;
+    object-fit: contain;
+    margin-left: 25%;
+
+
+}
+
+.textContainer {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end; /* Cambia 'right' por 'flex-end' */
+    align-items: center;
+    flex-wrap: wrap; /* Añade esta línea */
+    transition: transform 0.3s ease-in-out;
+
+  }
+
+.textContainer h1{
+    color: #C1C2D3;
+    font-size: 1.3em;
+    margin-right: 5%;
+}
+
+.textContainer.open {
+    transform: translateY(0);
+  }
+  
+  .menuButton {
+    display: none;
+  }
+
+.textContainer a{
+    color: #C1C2D3;
+    font-size: 1.3em;
+    margin-right: 5%;
+    text-decoration: none;
+}
+
+.textContainer h1:hover{
+    color: #CDB8EC;
+    cursor: pointer;
+}
+
+
+@media (max-width: 700px){
+
+
+
+
+    .textContainer h1{
+        font-size: 1em;
+        margin-right: 10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .textContainer a{
+        font-size: 1em;
+        margin-right: 10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .textContainer {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end; /* Cambia 'right' por 'flex-end' */
+        align-items: center;
+       
+        flex-wrap: wrap; /* Añade esta línea */
+      }
+    
+
+}
+
+
+@media (max-width: 600px) {
+    .textContainer {
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+        align-items: center;
+        width: 70%;
+        margin-left: 15%;
+    }
+  
+    .textContainer a {
+      width: 50%;
+    }
+    .banner{
+        height: 12vh;
+    }
+       
+    .imageContainer img{
+    
+
+        margin-top: 15%;
+    }
+
+  }
+
+  @media (max-width: 400px) {
+    .textContainer {
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+        align-items: center;
+        width: 70%;
+        margin-left: 15%;
+    }
+  
+    .textContainer a {
+      width: 50%;
+    }
+
+    .banner{
+        height: 12vh;
+    }
+ 
+    
+    .imageContainer img{
+    
+
+        margin-top: 25%;
+    }
+    
+
+  }

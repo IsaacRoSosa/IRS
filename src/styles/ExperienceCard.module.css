@@ -1,0 +1,261 @@
+.card {
+    display: flex;
+    width: 96%;
+    padding: 20px;
+    border: 2px solid #BF90FF;
+    border-radius: 10px;
+    background-color: #010623;
+    color: #fff;
+    height: 50vh;
+    box-shadow: 0 0 25px rgba(97, 16, 167, 0.82); 
+    height: fit-content;
+  }
+  
+  .imageContainer {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  }
+  
+  .cardInfo {
+    width: 70%;
+    padding-left: 20px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+
+  .roleDuration{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+    width: 95%;
+  }
+
+  
+  .role {
+    font-size: 1.5rem;
+    color: #BF90FF;
+    font-weight: bold;
+
+  }
+  
+  .period {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #C1C2D3;
+
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    text-align: justify;
+    width: 90%;
+    font-weight: 500;
+    
+  }
+  
+  .description li {
+    margin-bottom: 10px; /* Ajusta este valor según tus necesidades */
+  }
+
+  .companyDescription {
+    font-size: 1.2rem;
+    text-align: justify;
+    width: 95%;
+    font-weight: 600;
+  }
+
+
+  .additionalInfo{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .logo2 {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 15%;
+    transition: 0.5s; 
+    box-shadow: 0 0 10px 0 #CBACF9; /* Añade una sombra de caja que brille */
+   
+}
+
+.logo2:hover {
+    background-color: #CBACF9;
+    transform: scale(1.1); /* Ajusta este valor a tus necesidades */
+    box-shadow: 0 0 10px 0 #CBACF9; /* Ajusta estos valores a tus necesidades */
+}
+
+.logo2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+ 
+.hideImage{
+    display: none;
+}
+
+
+@media (max-width:950px){
+  .title{
+    font-size: 2rem;
+  }
+
+  .role{
+    font-size: 1.3rem;
+  }
+
+  .period{
+    font-size: 1rem;
+  }
+
+  .description{
+    font-size: 1rem;
+  }
+
+  .companyDescription{
+    font-size: 1.1rem;
+  }
+
+}
+
+
+@media(max-width: 700px){
+
+  .hideImage{
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+
+  .imageContainer{
+    display: none;
+  }
+
+  .cardInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .roleDuration{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    text-align: center;
+  }
+
+  .card{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo{
+    width: 50%;
+    height: 50%;
+  }
+
+  .description{
+    font-size: 1.1rem;
+    width: 85%;
+    font-weight: 500;
+    align-self: center;
+    margin: 0 auto;
+    list-style: none;
+    align-self: center;
+    margin-right: 100px;
+  }
+
+  .title {
+    font-size: 1.7em;
+  }
+
+  .role{
+    font-size: 1.2em;
+  }
+
+  .period{
+    font-size: 1em;
+  }
+
+  .description li{
+    list-style-type: none;
+    
+    
+  }
+
+  
+}
+
+@media (max-width: 500px){
+  .title {
+    font-size: 1.5em;
+  }
+
+  .role{
+    font-size: 1em;
+  }
+
+  .period{
+    font-size: 0.9em;
+  }
+
+  .description{
+    font-size: 1em;
+    width: 85%;
+    font-weight: 500;
+    align-self: center;
+    margin: 0 auto;
+    list-style: none;
+    align-self: center;
+    margin-right: 100px;
+  }
+
+  .companyDescription{
+    font-size: 1em;
+  }
+
+  .description li{
+    list-style-type: none;
+  }
+
+  .logo{
+    width: 40%;
+    height: 40%;
+  }
+
+ 
+
+  .additionalInfo{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+  }
+
+  .hideImage{
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+
+}

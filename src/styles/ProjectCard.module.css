@@ -1,0 +1,114 @@
+.card { 
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(120deg, #04071D, #230052);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #BF90FF;
+    box-shadow: 0 0 15px rgba(97, 16, 167, 0.82);
+  }
+   
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .imageContainer {
+    width: 100%;
+    height: 30vh;
+    background-color: #60a5fa;
+    border-radius: 15px;
+    
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 0px;
+    margin-top: 0;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 10px;
+  }
+  
+  .technologies {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+  
+  .techItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .techIcon {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 5px;
+  }
+  
+  .techName {
+    font-size: 0.65rem;
+    color: #bbb;
+  }
+  
+  .links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .link {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #CBACF9;
+    text-decoration: none;
+    transition: color 0.3s;
+    transition: 0.5s;
+    
+  }
+  
+  .linkIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.5s;
+    box-shadow: 0 0 5px rgba(142, 67, 207, 0.82); 
+  }
+  
+  .link:hover {
+    color: #a46df7;
+    scale: 1.1;
+  }
+  
+
+  .link:hover .linkIcon {
+    background-color: #a46df7;
+    
+  }
+ 

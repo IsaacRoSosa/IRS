@@ -1,0 +1,66 @@
+.Container{
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+ 
+.blackContainer{ 
+    width: 90%;
+    height: 100%;
+
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ProjectContainer{
+    width: 100%;
+    height: fit-content;
+    border-radius: 25px;
+    
+}
+
+.ProjectContainer h1{
+    font-size: 4em;
+    color: white;
+    position: relative;
+}
+
+.ProjectContainer h1::after {
+    content: '';
+    position: absolute;
+    left:1px;
+    bottom: -8px; /* Ajusta este valor a tus necesidades */
+    height: 7px; /* Ajusta este valor a tus necesidades */
+    width: 4em;
+    background-color: #CBACF9; /* Ajusta este valor a tus necesidades */
+}
+
+.Projects {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;   
+    row-gap: 40px;
+  }
+
+  @media (max-width: 1200px)  {
+    .Projects {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .Projects {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .subTitle{
+    font-size: 2.7em;
+    color: #EEE2FF;
+  }

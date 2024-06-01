@@ -1,0 +1,87 @@
+.card {
+    position: relative;
+    width: calc((100% - 50px) / 4);
+    height: 100px;
+    padding: 5px;
+    border-radius: 1rem;
+    background: #181818;
+    display: flex;
+    align-items: center;
+    border: 3px solid #52268F; /* Añade un borde de color fijo */
+    box-shadow: 0 0 25px rgba(97, 16, 167, 0.82); /* Añade una sombra de caja 
+    */
+    margin:25px; /* Ajusta este valor a tus necesidades */
+    transition: 0.5s; /* Añade una transición para el hover */
+}
+
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 45px rgba(121, 21, 209, 0.82); /* Añade una sombra de caja 
+    */
+}
+
+
+  .imageContainer {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+  }
+  
+  .cardInfo {
+  
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 90%;
+    overflow: visible;
+    border-radius: .7rem;
+    padding: 10px;
+    line-height: 0.1;
+  }
+  
+  .title {
+    font-weight: bold;
+    letter-spacing: .1em;
+    font-size: 1em;
+    color: white;
+  }
+  
+  .experience {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #C1C2D3;
+  }
+  
+
+  
+
+@media (max-width: 1000px) {
+  .card {
+      width: calc((100% - 50px) / 3); /* Asume 2 tarjetas por fila cuando el ancho de la pantalla es 800px o menos */
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+      width: 100%; /* Asume 1 tarjeta por fila cuando el ancho de la pantalla es 500px o menos */
+      height: 70px;
+  }
+  .title{
+    font-size: 1.8em;
+  }
+  .experience{
+    font-size: 1.2em;
+  }
+}

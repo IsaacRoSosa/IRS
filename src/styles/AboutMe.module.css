@@ -1,0 +1,151 @@
+.Container{
+    width: 100%;
+    height: fit-content;
+    margin-top: 1%;
+    justify-content: center;
+    display: flex;
+}
+ 
+.blackContainer{
+    width: 90%;
+    height: 100%;
+   /* background-color: black;*/
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutMeContainer{
+    width: 100%;
+    height: fit-content;
+    border-radius: 25px;
+}
+
+.aboutMeContainer h1{
+    font-size: 4em;
+    color: white;
+    position: relative;
+}
+
+.aboutMeContainer h1::after {
+    content: '';
+    position: absolute;
+    left:1px;
+    bottom: -8px; /* Ajusta este valor a tus necesidades */
+    height: 7px; /* Ajusta este valor a tus necesidades */
+    width: 4.8em;
+    background-color: #CBACF9; /* Ajusta este valor a tus necesidades */
+}
+
+.aboutMeContainer p{
+    font-size: 1.8em;
+    color: white;
+    position: relative;
+    margin-top: 8vh;
+    font-weight: 600;
+    text-align: justify;
+    line-height: 1.3;
+
+}
+
+.LTTContainer{
+    width: 100%;
+    height: 70%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.LTTContainer h1{
+    font-size: 2.7em;
+    color: #EEE2FF;
+}
+
+.CardContainer{
+    width: 100%;
+    display: flex;
+  height: fit-content;
+  flex-wrap: wrap;
+  justify-content: space-around;
+} 
+
+@media (max-width: 650px){
+    .Container{
+        margin-top: 10%;
+    }
+
+    .LTTContainer h1{
+        font-size: 2.2em;
+        color: #EEE2FF;
+    }
+    .aboutMeContainer h1{
+        font-size: 3.3em;
+
+    }
+    .LTTContainer {
+        justify-content: center;
+        align-items: center; /* Centra los elementos verticalmente */
+    }
+    
+}
+@media (max-width: 500px) {
+    .LTTContainer {
+        justify-content: center;
+        align-items: center; /* Centra los elementos verticalmente */
+    }
+    .aboutMeContainer h1{
+      font-size: 3.3em;
+      margin-left: 22%;
+    }
+
+    .LTTContainer h1{ 
+        font-size: 2.2em;
+    }
+
+    .aboutMeContainer p{
+        font-size: 1.4em;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .LTTContainer {
+        justify-content: center;
+        align-items: center; /* Centra los elementos verticalmente */
+    }
+    .aboutMeContainer h1{
+      font-size: 3em;
+      margin-left: 17.5%;
+    }
+
+    .LTTContainer h1{ 
+        font-size: 1.8em;
+    }
+
+    .aboutMeContainer p{
+        font-size: 1.4em;
+    }
+
+    
+}
+
+@media (max-width: 400px) {
+    .LTTContainer {
+        justify-content: center;
+        align-items: center; /* Centra los elementos verticalmente */
+    }
+    .aboutMeContainer h1{
+      font-size: 3em;
+      margin-left: 12.5%;
+    }
+
+    .LTTContainer h1{ 
+        font-size: 1.7em;
+    }
+
+    .aboutMeContainer p{
+        font-size: 1.3em;
+    }
+
+   
+}
