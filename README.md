@@ -9,8 +9,8 @@ Check it out  👉 https://isaacrs-portafolio.vercel.app/
 - CSS
 
 ### Will Do:
-- [ ] Nav Bar Mobile Responsiveness
-- [ ] Hackathon Slider - Card design
-- [ ] Experience Section - Button Responsiveness
-- [ ] Add Missing Projects
+- Nav Bar Mobile Responsiveness
+- Hackathon Slider - Card design
+- Experience Section - Button Responsiveness
+- Add Missing Projects
 
