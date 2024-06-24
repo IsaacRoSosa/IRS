@@ -8,7 +8,7 @@ import CubeComponent from './CubeComponent'
 const HeroSection = () => {
   return (
     <div id='home' className={styles.container}>
-
+ 
       <div className={styles.textContainer}> 
         <h2>Hi, I&apos;m</h2>
         <h1>Isaac Rojas </h1>

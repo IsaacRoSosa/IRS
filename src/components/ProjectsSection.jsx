@@ -5,6 +5,62 @@ import CompetitionSlider from '@/components/CompetitionSlider';
  
 const projects = [
   {
+    image: '/Projects/Rockwell.png',
+    title: 'RockWell Factory Simulator',
+    description: 'RockWell Factory Simulator is a web-based platform developed for RockWell Automation. The primary goal of this project is to showcase RockWell Automations Digital Thread through engaging digital experiences, including interactive video games. These experiences demonstrate how RockWell products can enhance company operations and illustrate potential consequences of not utilizing their solutions.',
+    technologies: [
+      { name: 'Unity', logo: '/Logos/Unity-logo.png' },
+      { name: 'C#', logo: '/Logos/c-logo.png' },
+      { name: 'CSS', logo: '/Logos/css-logo.webp' },
+      { name: 'javaScript', logo: '/Logos/JavaScript-logo.png' },
+      { name: 'React.js', logo: '/Logos/React-logo.png' },
+      {name: 'Next.js', logo: '/Logos/next-logo.png'},
+      {name: 'MySQL', logo: '/Logos/Mysql-logo.png'}
+    ],
+    links: [
+      { name: 'Github Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/IsaacRoSosa/EcoGuardian' },
+      { name: 'Video Demo', logo: '/Logos/yt.png', url: 'hhttps://youtu.be/DwJ_8V0cYkQ' },
+      {name: 'Website', logo: '/Logos/website-logo.png', url: 'https://rock-well-factory-simulator.vercel.app/' }
+    ]
+  },{
+    image: '/Projects/Innovaction.png',
+    title: 'Innovaction Gym Event Dashboard',
+    description: 'Web application for the Innovaction Gym at Tec de Monterrey, campus Monterrey. Features include a calendar for upcoming and past events, and an administration dashboard for improved event and data management. (On Development)',
+    technologies: [
+      { name: 'React', logo: '/Logos/React-logo.png' },
+      { name: 'TypeScript', logo: '/Logos/TypeScript.png' },
+      { name: 'Vite', logo: '/Logos/Vite.png' },
+      { name: 'CSS', logo: '/Logos/css-logo.webp' },
+      { name: 'My SQL', logo: '/Logos/Mysql-logo.png' },
+      { name: 'Flask', logo: '/Logos/Flask-logo.png' }
+
+    ],
+    links: [
+      { name: 'Github Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/Tect0r0/innovaction_dashboard' },
+      { name: 'Video Demo', logo: '/Logos/yt.png', url: 'https://youtu.be/YSj2ur-VW94' }
+
+     
+    ]
+  },{
+    image: '/Projects/Olli.jpeg',
+    title: 'OLLI App',
+    description: 'A platform with interactive maps displaying States or Municipalities, where users can obtain a prediction with 90% accuracy regarding upcoming electrical consumption in the region. Depending on the datasets used, the platform provides detailed information on electrical consumption, including peak electricity usage and other relevant data.(On Development)',
+    technologies: [
+      { name: 'React', logo: '/Logos/React-logo.png' },
+      { name: 'JavaScript', logo: '/Logos/JavaScript-logo.png' },
+      { name: 'Python', logo: '/Logos/Python-logo.png' },
+      { name: 'CSS', logo: '/Logos/css-logo.webp' },
+      {name: 'TensorFlow', logo: '/Logos/Tensorflow.png'},
+      {name:'Matplotlib', logo: '/Logos/matplotlib.png'},
+      {name:'Numpy', logo: '/Logos/numpy.svg'},
+  
+
+    ],
+    links: [
+      { name: 'Github Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/example/repo2' },
+      { name: 'Devpost', logo: '/Logos/Devpost.png', url: 'https://devpost.com/software/olli-app' }
+    ]
+  },{
     image: '/Projects/Ecoguardian.jpeg',
     title: 'ECO GUARDIAN',
     description: 'EcoGuardian is a project that uses IoT devices to monitor and collect environmental data to detect and anticipate forest fires. The project includes an interactive website that visualizes the collected data and displays the location and status of the devices on a map.',
@@ -13,14 +69,14 @@ const projects = [
       { name: 'HTML', logo: '/Logos/html-logo.webp' },
       { name: 'CSS', logo: '/Logos/css-logo.webp' },
       { name: 'javaScript', logo: '/Logos/JavaScript-logo.png' },
-      { name: 'React.js', logo: '/LOGOS/React-logo.png' },
+      { name: 'React.js', logo: '/Logos/React-logo.png' },
       {name: 'MySQL', logo: '/Logos/Mysql-logo.png'}
 
 
     ],
     links: [
-      { name: 'GitHub Repository', logo: '/Logos/github-logo.png', url: 'https://github.com/IsaacRoSosa/EcoGuardian' },
-      { name: 'Demo Video (Spanish)', logo: '/Logos/yt.png', url: 'https://example.com/project1' }
+      { name: 'Github Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/IsaacRoSosa/EcoGuardian' },
+      { name: 'Presentation Video (Spanish)', logo: '/Logos/yt.png', url: 'https://example.com/project1' }
     ]
   },
   {
@@ -38,27 +94,8 @@ const projects = [
 
     ],
     links: [
-      { name: 'GitHub Repository', logo: '/Logos/github-logo.png', url: 'https://github.com/Tect0r0/dsc2024' },
+      { name: 'Github Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/Tect0r0/dsc2024' },
       { name: 'Video Demo', logo: '/Logos/yt.png', url: 'https://www.youtube.com/watch?v=n0gz5LrViM4&ab_channel=IsaacRojasSosa' }
-    ]
-  },{
-    image: '/Projects/Olli.jpeg',
-    title: 'OLLI App',
-    description: 'A platform with interactive maps displaying States or Municipalities, where users can obtain a prediction with 90% accuracy regarding upcoming electrical consumption in the region. Depending on the datasets used, the platform provides detailed information on electrical consumption, including peak electricity usage and other relevant data.(On Development)',
-    technologies: [
-      { name: 'React', logo: '/Logos/React-logo.png' },
-      { name: 'JavaScript', logo: '/Logos/JavaScript-logo.png' },
-      { name: 'Python', logo: '/Logos/Python-logo.png' },
-      { name: 'CSS', logo: '/Logos/css-logo.webp' },
-      {name: 'TensorFlow', logo: '/Logos/TensorFlow.png'},
-      {name:'Matplotlib', logo: '/Logos/matplotlib.png'},
-      {name:'Numpy', logo: '/Logos/numpy.svg'},
-  
-
-    ],
-    links: [
-      { name: 'GitHub Repository', logo: '/Logos/github-logo.png', url: 'https://github.com/example/repo2' },
-      { name: 'Devpost', logo: '/Logos/Devpost.png', url: 'https://devpost.com/software/olli-app' }
     ]
   }, {
     image: '/Projects/Bamboo.png',
@@ -74,7 +111,7 @@ const projects = [
  
     ],
     links: [
-      { name: 'GitHub Repository', logo: '/Logos/github-logo.png', url: 'https://github.com/davidballezaa/bamboo' }
+      { name: 'Github Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/davidballezaa/bamboo' }
     ]
   },{
     image: '/Projects/Iglesia.png',
@@ -89,27 +126,23 @@ const projects = [
 
     ],
     links: [
-      { name: 'GitHub Repository', logo: '/Logos/github-logo.png', url: 'https://github.com/davidballezaa/iglesia' },
+      { name: 'Github Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/davidballezaa/iglesia' },
       { name: 'Video Demo', logo: '/Logos/yt.png', url: 'https://youtu.be/seEyHl93n18' }
     ]
-  },{
-    image: '/Projects/Innovaction.jpeg',
-    title: 'Innovaction Dashboard',
-    description: 'Web application for the Innovaction Gym at Tec de Monterrey, campus Monterrey. Features include a calendar for upcoming and past events, and an administration dashboard for improved event and data management. (On Development)',
+  },  {
+    image: '/Projects/MatlabProjects.png',
+    title: 'MATLAB Projects',
+    description: 'Diverse Matlab projects showcasing computational modeling, simulation, and visualization. Topics include volcanic eruptions, Formula 1 dynamics, electric fields for malaria diagnosis, and magnetic fields of current-carrying rings.',
     technologies: [
-      { name: 'React', logo: '/Logos/React-logo.png' },
-      { name: 'TypeScript', logo: '/Logos/TypeScript.png' },
-      { name: 'Vite', logo: '/Logos/Vite.png' },
-      { name: 'CSS', logo: '/Logos/css-logo.webp' },
-      { name: 'My SQL', logo: '/Logos/Mysql-logo.png' },
-      { name: 'Flask', logo: '/Logos/Flask-logo.png' }
-
+      { name: 'Matlab', logo: '/Logos/matlab-logo.png' },
+     
     ],
     links: [
-      { name: 'GitHub Repository', logo: '/Logos/github-logo.png', url: 'https://github.com/Tect0r0/innovaction_dashboard' }
+      { name: 'Github Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/IsaacRoSosa/Matlab-Projects' },
      
     ]
-  }
+  },
+
   // Añade más proyectos según sea necesario
 ];
 
@@ -141,7 +174,7 @@ function ExperienceSection() {
          
         
 
-        
+         
         
     </div>
   )

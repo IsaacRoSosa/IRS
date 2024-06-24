@@ -8,8 +8,7 @@
   margin: 0 10px;
   border: 1px solid #BF90FF;
   box-shadow: 0 0 5px rgba(97, 16, 167, 0.82);
-
-
+  height: 85vh;
 
 }
 
@@ -41,6 +40,7 @@
   color: #ffffff;
   margin-bottom: 0px;
   margin-top: 5px;
+  text-align: center;
 }
 
 .date {
@@ -110,9 +110,14 @@
   color: #BF90FF;
 }
 
+
+
+
+
 @media (max-width: 1024px) {
   .title {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    text-align: center;
   }
 
   .date,
@@ -125,25 +130,56 @@
     font-size: 0.9rem;
   }
 
-
+  .card{
+    height: 78vh;
+  }
 
 
 }
+
+
+
+
 
 @media (max-width: 750px) {
   .title {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    text-align: center;
   }
 
   .date,
   .team,
   .description {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .link {
-    font-size: 0.8rem;
+    font-size: 1.2em;
+  }
+  .card{
+    height: 85vh;
   }
 
 
+
+  .date {
+    font-size: 1.3rem;
+
+  }
+  
+  .team {
+    font-size: 1.3rem;
+ 
+  }
+
+ 
+
 }
+
+@media only screen and (max-width: 450px) {
+  .card{
+    height: 65vh;
+
+  }
+}
+

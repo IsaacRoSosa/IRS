@@ -1,7 +1,7 @@
 import React from 'react'; 
 import styles from '@/styles/ExperienceCard.module.css';
 
-const ExperienceCard = ({ title, role, period, description, logo, companyDescription, linkedn }) => {
+const ExperienceCard = ({ title, role, period, description, logo, companyDescription, linkedn}) => {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
