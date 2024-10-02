@@ -5,13 +5,11 @@
     display: flex; 
     flex-direction: column;
     align-items: center;
-   
 }
  
 .blackContainer{ 
     width: 90%;
     height: 100%;
-
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -21,7 +19,6 @@
     width: 100%;
     height: fit-content;
     border-radius: 25px;
-    
 }
 
 .ProjectContainer h1{
@@ -34,18 +31,25 @@
     content: '';
     position: absolute;
     left:1px;
-    bottom: -8px; /* Ajusta este valor a tus necesidades */
-    height: 7px; /* Ajusta este valor a tus necesidades */
+    bottom: -8px; 
+    height: 7px; 
     width: 4em;
-    background-color: #CBACF9; /* Ajusta este valor a tus necesidades */
+    background-color: #CBACF9; 
 }
 
 .Projects {
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;   
     row-gap: 40px;
+  }
+
+  .projectCount {
+    font-size: 1.2em;
+    color: #EEE2FF;
+    margin-top: 0px;
+    text-align: right;
+    width: 100%;
   }
 
   @media (max-width: 1200px)  {
@@ -77,3 +81,40 @@
     font-size: 2.7em;
     color: #EEE2FF;
   }
+
+  .pagination {
+    display: flex;
+    justify-content: flex-end; /* Mueve la paginación a la derecha */
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .pageIndicators {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .pageIndicator {
+    width: 30px; /* Más grande */
+    height: 30px;
+    background-color: #bbb;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.1em; /* Tamaño del número */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .pageIndicator.active {
+    background-color: #CBACF9;
+    transform: scale(1.2);
+  }
+  
+  .pageIndicator:hover {
+    background-color: #a46df7;
+  }
+  

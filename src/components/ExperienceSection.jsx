@@ -5,17 +5,12 @@ import ExperienceSlider  from './ExperienceSlider'
 function ExperienceSection() {
   return (
     <div id='Experience' className={styles.Container}>
-        
         <div className={styles.blackContainer}>
-
-
         <div className={styles.ExperienceContainer}>
                     <h1> Experience</h1>  
                 </div>
-               
                    <ExperienceSlider />
-        </div>
-         
+        </div>    
     </div>
   )
 }

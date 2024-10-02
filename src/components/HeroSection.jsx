@@ -8,13 +8,13 @@ import CubeComponent from './CubeComponent'
 const HeroSection = () => {
   return (
     <div id='home' className={styles.container}>
- 
+
       <div className={styles.textContainer}> 
         <h2>Hi, I&apos;m</h2>
         <h1>Isaac Rojas </h1>
         <div className={styles.containers}>
 
-          <a href="Resume_IsaacRojas_2024.pdf" download className={styles.resumeButton}> Resume</a>
+          <a href="Resume_Isaac_Rojas.pdf" download className={styles.resumeButton}> Resume</a>
 
           <a href="https://www.linkedin.com/in/isaacrojassosa/" target="_blank" rel="noreferrer">
               <img src="/Logos/linkedn-logo.png" alt="LinkedIn Logo" className={styles.logo} />

@@ -24,9 +24,9 @@ function AboutMeSection() {
                         <ProgrammingCard logo="/Logos/Python-logo.png" title="PYTHON" experience="2 years" />
                         <ProgrammingCard logo="/Logos/JavaScript-logo.png" title="JavaScript" experience="2 years" />
                         <ProgrammingCard logo="/Logos/c++-logo.png" title="C++" experience="1 year" />
-                        <ProgrammingCard logo="/Logos/php-logo.png" title="PHP" experience="6 Months" />
-                        <ProgrammingCard logo="/Logos/matlab-logo.png" title="MATLAB" experience="6 Months" />
-                        <ProgrammingCard logo="/Logos/c-logo.png" title="C#" experience="4 Months" />
+                        <ProgrammingCard logo="/Logos/swift-logo.png" title="Swift" experience="< 6 Months" />
+                        <ProgrammingCard logo="/Logos/matlab-logo.png" title="MATLAB" experience="< 6 Months" />
+                        <ProgrammingCard logo="/Logos/c-logo.png" title="C#" experience="< 6 Months" />
                     </div>
 
                     <h1>Tools & Technologies</h1>
@@ -35,12 +35,12 @@ function AboutMeSection() {
 
                         <TTCard logo="/Logos/React-logo.png" title="React" />
                         <TTCard logo="/Logos/next-logo.png" title="Next.js" />
-                        <TTCard logo="/Logos/node-logo.png" title="Node.js" />
+                        <TTCard logo="/Logos/PostgreSQL-logo.png" title="PostgreSQL" />
                         <TTCard logo="/Logos/Flask-logo.png" title="Flask" />
                         <TTCard logo="/Logos/html-logo.webp" title="HTML" />
                         <TTCard logo="/Logos/css-logo.webp" title="CSS" />
                         <TTCard logo="/Logos/Mysql-logo.png" title="SQL" />
-                        <TTCard logo="/Logos/Firebase-logo.png" title="Firebase" />
+                        <TTCard logo="/Logos/supabase.png" title="Supabase" />
                         <TTCard logo="/Logos/Unity-logo.png" title="Unity" />
                         <TTCard logo="/Logos/Figma-logo.png" title="Figma" />
                     
