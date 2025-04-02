@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/LanguageCard.module.css'; // Asegúrate de crear este archivo CSS
+import styles from '@/styles/LanguageCard.module.css';
 
 
 const ProgrammingCard = ({ logo, title, experience }) => {

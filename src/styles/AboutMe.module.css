@@ -132,7 +132,7 @@
 @media (max-width: 400px) {
     .LTTContainer {
         justify-content: center;
-        align-items: center; /* Centra los elementos verticalmente */
+        align-items: center; 
     }
     .aboutMeContainer h1{
       font-size: 3em;

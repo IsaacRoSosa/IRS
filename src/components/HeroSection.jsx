@@ -1,9 +1,7 @@
-"use client"; // Asegúrate de añadir esta línea al comienzo del archivo
+"use client";
 import React from 'react'
 import styles from '@/styles/HeroSection.module.css'
-import CubeComponent from './CubeComponent'
-
- 
+import CubeComponent from './CubeComponent' 
 
 const HeroSection = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/TTCard.module.css'; // Asegúrate de crear este archivo CSS
+import styles from '@/styles/TTCard.module.css'; 
 
 
 const TTCard = ({ logo, title }) => {
