@@ -19,7 +19,6 @@ export default function Home() {
       <AboutMeSection />
       <ExperienceSection />
       <ProjectsSection />
-      <ContactMeSection />
     </main>
   );
 }
