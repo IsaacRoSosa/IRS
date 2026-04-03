@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ExperienceCard from './ExperienceCard';
-import styles from '@/styles/ExperienceSlider.module.css';
 
 const experiences = [ 
   {
@@ -86,12 +85,16 @@ const ExperienceSlider = () => {
 
 
   return (
-    <div className={styles.slider}>
-      <div className={styles.buttonContainer}>
+    <div className="w-full flex flex-col items-center">
+      <div className="mt-[2vh] flex justify-left items-start mb-[30px] self-start w-full max-[500px]:flex-col max-[500px]:gap-5">
         {experiences.map((experience, index) => (
           <button
             key={index}
-            className={`${styles.button} ${activeIndex === index ? styles.active : ''}`}
+            className={`bg-[#161A31] border-2 border-[#CBACF9] py-2.5 px-5 mx-[5px] cursor-pointer text-[#C1C2D3] transition-all duration-500 w-[400px] text-[1.6em] rounded-[15px] ${
+              activeIndex === index
+                ? 'bg-[#111b56d6] shadow-[0_0_25px_rgba(97,16,167,0.82)] text-[#CBACF9] scale-[1.02]'
+                : ''
+            } max-md:w-fit max-[500px]:w-full max-[500px]:text-[1.5em]`}
             onClick={() => setActiveIndex(index)}
           >
             {experience.title}

@@ -1,8 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import CompetitionCard from '@/components/CompetitionCard';
-import styles from '@/styles/CompetitionSlider.module.css';
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const competitions = [
@@ -53,7 +52,6 @@ const competitions = [
       { name: 'GitHub Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/davidballezaa/bamboo'}],
     project: 'Bamboo'
   }
-  // Añade más hackathons según sea necesario
 ];
 
 const CompetitionSlider = () => {
@@ -88,11 +86,10 @@ const CompetitionSlider = () => {
   };
 
   return (
-    <section className={styles.sliderSection}>
-
-      <Slider {...settings} className={styles.slider}>
+    <section>
+      <Slider {...settings} className="relative">
         {competitions.map((competition, index) => (
-          <div key={index} className={styles.slide}>
+          <div key={index} className="p-2.5">
             <CompetitionCard {...competition} />
           </div>
         ))}
@@ -105,18 +102,18 @@ const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} ${styles.arrow} ${styles.nextArrow}`}
+      className={`${className} absolute top-1/2 -translate-y-1/2 z-[2] bg-black/50 rounded-full p-2.5 cursor-pointer right-2.5`}
       style={{ ...style }}
       onClick={onClick}
     />
   );
 };
 
-const SamplePrevArrow = (props) => { 
+const SamplePrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} ${styles.arrow} ${styles.prevArrow}`}
+      className={`${className} absolute top-1/2 -translate-y-1/2 z-[2] bg-black/50 rounded-full p-2.5 cursor-pointer left-2.5`}
       style={{ ...style }}
       onClick={onClick}
     />

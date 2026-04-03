@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import styles from '@/styles/ProjectSection.module.css'
 import ProjectCard from '@/components/ProjectCard'
 import CompetitionSlider from '@/components/CompetitionSlider';
   
@@ -133,23 +132,27 @@ function ExperienceSection() {
   };
 
   return (
-    <div id='Projects' className={styles.Container}>
-      <div className={styles.blackContainer}>
-        <div className={styles.ProjectContainer}>
-          <h1>Projects</h1>
+    <div id='Projects' className="w-full h-fit justify-center flex flex-col items-center">
+      <div className="w-[90%] h-full rounded-[25px] flex flex-col">
+        <div className="w-full h-fit rounded-[25px]">
+          <h1 className="text-[4em] text-white relative after:content-[''] after:absolute after:left-[1px] after:-bottom-2 after:h-[7px] after:w-[4em] after:bg-[#CBACF9] max-md:text-center max-md:after:left-1/2 max-md:after:-translate-x-1/2">
+            Projects
+          </h1>
         </div>
 
-
-        
-        <div className={styles.pagination}>
-          <div className={styles.projectCount}>
+        <div className="flex justify-end items-center gap-5 mb-[15px]">
+          <div className="text-[1.2em] text-[#EEE2FF] mt-0 text-right w-full">
             Showing {currentProjects.length} / {projects.length} projects
           </div>
-          <div className={styles.pageIndicators}>
+          <div className="flex gap-5">
             {Array.from({ length: totalPages }, (_, index) => (
               <div
                 key={index}
-                className={`${styles.pageIndicator} ${currentPage === index + 1 ? styles.active : ''}`}
+                className={`w-[30px] h-[30px] rounded-full text-white text-[1.1em] flex justify-center items-center cursor-pointer transition-all duration-300 ${
+                  currentPage === index + 1
+                    ? 'bg-[#CBACF9] scale-125'
+                    : 'bg-[#bbb] hover:bg-[#a46df7]'
+                }`}
                 onClick={() => handlePageSelect(index + 1)}
               >
                 {index + 1}
@@ -158,13 +161,13 @@ function ExperienceSection() {
           </div>
         </div>
 
-        <div className={styles.Projects}>
+        <div className="grid grid-cols-3 gap-5 row-gap-10 max-xl:grid-cols-2 max-md:grid-cols-1">
           {currentProjects.map((project) => (
             <ProjectCard key={project.id} {...project} />
           ))}
         </div>
 
-        <h1 className={styles.subTitle}>Hackathons</h1>
+        <h1 className="text-[2.7em] text-[#EEE2FF] max-md:text-center">Hackathons</h1>
         <CompetitionSlider />
       </div>
     </div>
