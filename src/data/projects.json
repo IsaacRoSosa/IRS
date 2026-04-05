@@ -1,0 +1,111 @@
+[
+   {
+    "id": 1,
+    "image": "/Projects/bread.jpeg",
+    "title": "Panaderia",
+    "description": "Panaderia",
+    "technologies": [
+      { "name": "NextJs", "logo": "/Logos/Tools/nextjs.png" },
+      { "name": "React", "logo": "/Logos/Tools/react.png" },
+      { "name": "TypeScript", "logo": "/Logos/Languages/typescript.png" },
+      { "name": "CSS", "logo": "/Logos/Tools/css.png" }
+    ],
+    "links": [
+      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/davidballezaa/iglesia" },
+      { "name": "Video Demo", "logo": "/Logos/yt.png", "url": "https://youtu.be/seEyHl93n18" }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "/Projects/JobHill.png",
+    "title": "JobHill",
+    "description": "JobHill",
+    "technologies": [
+      { "name": "NextJs", "logo": "/Logos/Tools/nextjs.png" },
+      { "name": "javascript", "logo": "/Logos/Languages/javascript.png" },
+      { "name": "Python", "logo": "/Logos/Languages/python.png" },
+      { "name": "PostgreSQL", "logo": "/Logos/Tools/postgresql.png" },
+      { "name": "Supabase", "logo": "/Logos/Tools/supabase.png" },
+      { "name": "CSS", "logo": "/Logos/Tools/css.png" }
+    ],
+    "links": [
+      { "name": "Website", "logo": "/Logos/website-logo.png", "url": "https://jobhill.vercel.app/" },
+      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/IsaacRoSosa/JobHill" }
+    ]
+  },
+  {
+    "id": 3,
+    "image": "/Projects/CrossTalk.png",
+    "title": "CrossTalk",
+    "description": "Description",
+    "technologies": [
+      { "name": "Unity", "logo": "/Logos/Unity-logo.png" },
+      { "name": "C#", "logo": "/Logos/Languages/c.png" },
+      { "name": "CSS", "logo": "/Logos/Tools/css.png" },
+      { "name": "javaScript", "logo": "/Logos/Languages/javascript.png" },
+      { "name": "React.js", "logo": "/Logos/Tools/react.png" },
+      { "name": "Next.js", "logo": "/Logos/Tools/nextjs.png" },
+      { "name": "MySQL", "logo": "/Logos/Tools/mySql.png" }
+    ],
+    "links": [
+      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/IsaacRoSosa/EcoGuardian" },
+      { "name": "Video Demo", "logo": "/Logos/yt.png", "url": "https://youtu.be/DwJ_8V0cYkQ" },
+      { "name": "Website", "logo": "/Logos/website-logo.png", "url": "https://rock-well-factory-simulator.vercel.app/" }
+    ]
+  },
+  {
+    "id": 4,
+    "image": "/Projects/Papalote.png",
+    "title": "Papalote",
+    "description": "Papalote",
+    "technologies": [
+      { "name": "React", "logo": "/Logos/Tools/react.png" },
+      { "name": "TypeScript", "logo": "/Logos/Languages/typescript.png" },
+      { "name": "Vite", "logo": "/Logos/Vite.png" },
+      { "name": "CSS", "logo": "/Logos/Tools/css.png" },
+      { "name": "My SQL", "logo": "/Logos/Tools/mySql.png" },
+      { "name": "Flask", "logo": "/Logos/Flask-logo.png" }
+    ],
+    "links": [
+      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/Tect0r0/innovaction_dashboard" },
+      { "name": "Video Demo", "logo": "/Logos/yt.png", "url": "https://youtu.be/YSj2ur-VW94" }
+    ]
+  },
+  {
+    "id": 5,
+    "image": "/Projects/Innovaction.jpeg",
+    "title": "Innovaction Gym Event Dashboard",
+    "description": "Web application for the Innovaction Gym",
+    "technologies": [
+      { "name": "React", "logo": "/Logos/Tools/react.png" },
+      { "name": "JavaScript", "logo": "/Logos/Languages/javascript.png" },
+      { "name": "Python", "logo": "/Logos/Languages/python.png" },
+      { "name": "CSS", "logo": "/Logos/Tools/css.png" },
+      { "name": "TensorFlow", "logo": "/Logos/Tensorflow.png" },
+      { "name": "Matplotlib", "logo": "/Logos/matplotlib.png" },
+      { "name": "Numpy", "logo": "/Logos/numpy.svg" }
+    ],
+    "links": [
+      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/example/repo2" },
+      { "name": "Devpost", "logo": "/Logos/Devpost.png", "url": "https://devpost.com/software/olli-app" }
+    ]
+  },
+  {
+    "id": 6,
+    "image": "/Projects/SwiftHack.jpeg",
+    "title": "Swift Hack",
+    "description": "Swift Hack  ",
+    "technologies": [
+      { "name": "PHP", "logo": "/Logos/php-logo.png" },
+      { "name": "HTML", "logo": "/Logos/Tools/html.png" },
+      { "name": "CSS", "logo": "/Logos/Tools/css.png" },
+      { "name": "javaScript", "logo": "/Logos/Languages/javascript.png" },
+      { "name": "React.js", "logo": "/Logos/Tools/react.png" },
+      { "name": "MySQL", "logo": "/Logos/Tools/mySql.png" }
+    ],
+    "links": [
+      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/IsaacRoSosa/EcoGuardian" },
+      { "name": "Presentation Video (Spanish)", "logo": "/Logos/yt.png", "url": "https://example.com/project1" }
+    ]
+  }
+]
