@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 const techBadges = [
   { label: "⚛", bg: "rgba(56, 189, 248, 0.15)", color: "rgb(125, 211, 252)", title: "React" },
@@ -7,6 +7,37 @@ const techBadges = [
   { label: "TS", bg: "rgba(59, 130, 246, 0.15)", color: "rgb(96, 165, 250)", title: "TypeScript", fontSize: "9px", fontWeight: 900 },
   { label: "▲", bg: "rgba(255,255,255,0.08)", color: "white", title: "Three.js" },
   { label: "M", bg: "rgba(168, 85, 247, 0.2)", color: "rgb(216, 180, 254)", title: "Motion", fontWeight: "bold" },
+];
+
+const planetColors = [
+  {
+    gradient: "radial-gradient(circle at 35% 35%, #d060ff, #6600cc, #1a0040)",
+    glow: "rgba(160,40,255,0.5)"
+  },
+  {
+    gradient: "radial-gradient(circle at 35% 35%, #ffb840, #e05500, #3a1000)",
+    glow: "rgba(255,100,0,0.5)"
+  },
+  {
+    gradient: "radial-gradient(circle at 35% 35%, #40d4ff, #0066cc, #001a40)",
+    glow: "rgba(40,160,255,0.5)"
+  },
+  {
+    gradient: "radial-gradient(circle at 35% 35%, #ff4060, #cc0033, #400010)",
+    glow: "rgba(255,40,80,0.5)"
+  },
+  {
+    gradient: "radial-gradient(circle at 35% 35%, #40ffb8, #00cc66, #00401a)",
+    glow: "rgba(40,255,160,0.5)"
+  },
+  {
+    gradient: "radial-gradient(circle at 35% 35%, #ffff40, #cccc00, #404000)",
+    glow: "rgba(255,255,40,0.5)"
+  },
+  {
+    gradient: "radial-gradient(circle at 35% 35%, #ff80d4, #cc0099, #400033)",
+    glow: "rgba(255,80,200,0.5)"
+  }
 ];
 
 export default function ProjectCard
@@ -17,6 +48,15 @@ export default function ProjectCard
   description = "Description not provided. This is a default placeholder description for the Project Card component. Please provide a custom description when using this component to replace this text.",
 }) {
   const [tilt, setTilt] = useState({ rotateX: 6, rotateY: -3 });
+
+  // Generate random planets for this card 
+  const planets = useMemo(() => {
+    const shuffled = [...planetColors].sort(() => Math.random() - 0.5);
+    return {
+      left: shuffled[0],
+      right: shuffled[1]
+    };
+  }, []);
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -102,7 +142,7 @@ export default function ProjectCard
           }}
         />
 
-        {/* Purple planet - LEFT */}
+        {/* Left planet */}
         <div
           style={{
             position: "absolute",
@@ -112,13 +152,13 @@ export default function ProjectCard
             width: "32px",
             height: "32px",
             borderRadius: "50%",
-            background: "radial-gradient(circle at 35% 35%, #d060ff, #6600cc, #1a0040)",
-            boxShadow: "0 0 12px rgba(160,40,255,0.5), inset -3px -3px 8px rgba(0,0,0,0.5)",
+            background: planets.left.gradient,
+            boxShadow: `0 0 12px ${planets.left.glow}, inset -3px -3px 8px rgba(0,0,0,0.5)`,
             zIndex: 2,
           }}
         />
 
-        {/* Orange planet - RIGHT */}
+        {/* Right planet */}
         <div
           style={{
             position: "absolute",
@@ -128,8 +168,8 @@ export default function ProjectCard
             width: "32px",
             height: "32px",
             borderRadius: "50%",
-            background: "radial-gradient(circle at 35% 35%, #ffb840, #e05500, #3a1000)",
-            boxShadow: "0 0 12px rgba(255,100,0,0.5), inset -3px -3px 8px rgba(0,0,0,0.5)",
+            background: planets.right.gradient,
+            boxShadow: `0 0 12px ${planets.right.glow}, inset -3px -3px 8px rgba(0,0,0,0.5)`,
             zIndex: 2,
           }}
         />
