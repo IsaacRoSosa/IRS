@@ -1,12 +1,11 @@
 "use client";
 import React from 'react'
-import CubeComponent from './CubeComponent'
 
 const HeroSection = () => {
   return (
     <div
       id='home'
-      className="w-full h-screen flex items-center max-sm:flex-col max-sm:mt-[5vh]"
+      className="w-full h-screen flex items-center justify-center"
       style={{
         backgroundImage: `
           conic-gradient(from 90deg at 2px 2px, transparent 90deg, #78787827 0),
@@ -16,10 +15,10 @@ const HeroSection = () => {
         backgroundSize: '450px 450px, 90px 90px'
       }}
     >
-      <div className="w-[55%] min-h-[55vh] h-fit flex flex-col justify-center max-sm:w-full max-sm:h-[50vh] max-sm:min-h-0">
-        <h2 className="text-[4.5em] text-white ml-[12%] mb-0 mt-0 max-sm:text-[2.5em]">Hi, I&apos;m</h2>
-        <h1 className="text-[6em] text-[#CBACF9] ml-[12%] mb-0 mt-0 max-sm:text-[3em] max-sm:w-4/5">Isaac Rojas</h1>
-        <div className="w-4/5 h-1/5 flex self-center justify-around items-center mt-[6vh] max-sm:mt-[2vh]">
+      <div className="w-full max-w-[1200px] flex flex-col items-center justify-center">
+        <h2 className="text-[4.5em] text-white mb-0 mt-0 max-sm:text-[2.5em]">Hi, I&apos;m</h2>
+        <h1 className="text-[6em] text-[#CBACF9] mb-0 mt-0 max-sm:text-[3em]">Isaac Rojas</h1>
+        <div className="w-4/5 max-w-[500px] flex justify-around items-center mt-[6vh] max-sm:mt-[4vh]">
           <a
             href="Resume_Isaac_Rojas.pdf"
             download
@@ -44,9 +43,6 @@ const HeroSection = () => {
             />
           </a>
         </div>
-      </div>
-      <div className="w-[45%] h-[55vh] flex items-center justify-center max-sm:w-full max-sm:h-[50vh]">
-        <CubeComponent />
       </div>
     </div>
   )

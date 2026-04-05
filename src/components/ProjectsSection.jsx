@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import ProjectCard from '@/components/ProjectCard'
+import SolarSystemCard from '@/components/ProjectCard'
 import CompetitionSlider from '@/components/CompetitionSlider';
   
 const projects = [
@@ -161,9 +161,21 @@ function ExperienceSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-5 row-gap-10 max-xl:grid-cols-2 max-md:grid-cols-1">
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(340px, 400px))",
+          gap: "2.5rem",
+          justifyContent: "center",
+          padding: "1.5rem",
+          width: "100%"
+        }}>
           {currentProjects.map((project) => (
-            <ProjectCard key={project.id} {...project} />
+            <SolarSystemCard
+              key={project.id}
+              imageSrc={project.image}
+              title={project.title}
+              description={project.description}
+            />
           ))}
         </div>
 
