@@ -30,6 +30,9 @@ function ExperienceSection() {
               imageSrc={project.image}
               title={project.title}
               description={project.description}
+              technologies={project.technologies || []}
+              links={project.links || []}
+              images={project.images || []}
             />
           ))}
         </div>

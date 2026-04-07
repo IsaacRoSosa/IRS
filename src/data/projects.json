@@ -2,6 +2,7 @@
    {
     "id": 1,
     "image": "/Projects/bread.jpeg",
+    "images": [],
     "title": "Panaderia",
     "description": "Panaderia",
     "technologies": [
@@ -18,8 +19,14 @@
   {
     "id": 2,
     "image": "/Projects/JobHill.png",
+    "images": [
+      "/Projects/JobHill.png",
+      "/Projects/JobHill/JobHill2.png",
+      "/Projects/JobHill/JobHill3.png",
+      "/Projects/JobHill/JobHill4.png"
+    ],
     "title": "JobHill",
-    "description": "JobHill",
+    "description": "Jobhill is a job search platform focused on providing the latest internship and new grad opportunities in the tech industry. Built for helping fellow stundents from Tec de Monterrey",
     "technologies": [
       { "name": "NextJs", "logo": "/Logos/Tools/nextjs.png" },
       { "name": "javascript", "logo": "/Logos/Languages/javascript.png" },
@@ -29,8 +36,7 @@
       { "name": "CSS", "logo": "/Logos/Tools/css.png" }
     ],
     "links": [
-      { "name": "Website", "logo": "/Logos/website-logo.png", "url": "https://jobhill.vercel.app/" },
-      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/IsaacRoSosa/JobHill" }
+      { "name": "Website", "logo": "/Logos/website-logo.png", "url": "https://www.jobhill.xyz/" }
     ]
   },
   {

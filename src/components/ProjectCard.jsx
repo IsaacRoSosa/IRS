@@ -1,5 +1,5 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 const techBadges = [
   { label: "⚛", bg: "rgba(56, 189, 248, 0.15)", color: "rgb(125, 211, 252)", title: "React" },
@@ -40,16 +40,20 @@ const planetColors = [
   }
 ];
 
-export default function ProjectCard
-({
+export default function ProjectCard({
   imageSrc,
   imageAlt = "Project preview",
   title = "Project Title",
-  description = "Description not provided. This is a default placeholder description for the Project Card component. Please provide a custom description when using this component to replace this text.",
+  description = "Description not provided.",
+  technologies = [],
+  links = [],
+  images = [],
 }) {
   const [tilt, setTilt] = useState({ rotateX: 6, rotateY: -3 });
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Generate random planets for this card 
+  // Generate random planets for this card
   const planets = useMemo(() => {
     const shuffled = [...planetColors].sort(() => Math.random() - 0.5);
     return {
@@ -58,7 +62,29 @@ export default function ProjectCard
     };
   }, []);
 
+  const allImages = images.length > 0 ? images : [imageSrc];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
+  };
+
+  // Auto-play slider every 4 seconds when expanded
+  useEffect(() => {
+    if (!isExpanded || allImages.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isExpanded, allImages.length]);
+
   const handleMouseMove = (e) => {
+    if (isExpanded) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -74,184 +100,560 @@ export default function ProjectCard
   const handleMouseLeave = () => {
     setTilt({ rotateX: 6, rotateY: -3 });
   };
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (isExpanded) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isExpanded]);
+
   return (
-    <div
-      style={{
-        width: "100%",
-        maxWidth: "400px",
-        margin: "0 auto",
-        borderRadius: "20px",
-        overflow: "hidden",
-        border: "1px solid rgba(255,255,255,0.08)",
-        background: "#1a1730",
-        boxShadow: "0 0 20px rgba(203, 172, 249, 0.15), 0 32px 80px rgba(0,0,0,0.6)",
-      }}
-    >
-      {/* ── Image Container ── */}
+    <>
+      {/* Main Card */}
       <div
+        onClick={() => setIsExpanded(true)}
         style={{
-          position: "relative",
-          height: "220px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          width: "100%",
+          maxWidth: "400px",
+          margin: "0 auto",
+          borderRadius: "20px",
           overflow: "hidden",
-          background: "radial-gradient(ellipse at 20% 50%, #0d0826 0%, #060414 60%, #000 100%)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          background: "#1a1730",
+          boxShadow: "0 0 20px rgba(203, 172, 249, 0.15), 0 32px 80px rgba(0,0,0,0.6)",
+          cursor: "pointer",
+          transition: "transform 0.3s ease, box-shadow 0.3s ease",
         }}
+        onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.02)"}
+        onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
       >
-        {/* Starfield */}
+        {/* Image Container */}
         <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: [
-              "radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.9) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 28% 72%, rgba(255,255,255,0.7) 0%, transparent 100%)",
-              "radial-gradient(1.5px 1.5px at 45% 30%, rgba(255,255,255,1) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 62% 85%, rgba(255,255,255,0.6) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 78% 20%, rgba(255,255,255,0.8) 0%, transparent 100%)",
-              "radial-gradient(1.5px 1.5px at 88% 55%, rgba(255,255,255,0.9) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 5% 60%, rgba(255,255,255,0.5) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 35% 10%, rgba(255,255,255,0.7) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 93% 40%, rgba(255,255,255,0.6) 0%, transparent 100%)",
-              "radial-gradient(1.5px 1.5px at 82% 78%, rgba(255,255,255,0.8) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 18% 45%, rgba(255,255,255,0.7) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 52% 15%, rgba(255,255,255,0.6) 0%, transparent 100%)",
-              "radial-gradient(1.5px 1.5px at 68% 92%, rgba(255,255,255,0.8) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 25% 88%, rgba(255,255,255,0.5) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 75% 35%, rgba(255,255,255,0.7) 0%, transparent 100%)",
-              "radial-gradient(1.5px 1.5px at 38% 62%, rgba(255,255,255,0.9) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 85% 8%, rgba(255,255,255,0.6) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 8% 28%, rgba(255,255,255,0.5) 0%, transparent 100%)",
-              "radial-gradient(1px 1px at 95% 68%, rgba(255,255,255,0.7) 0%, transparent 100%)",
-              "radial-gradient(1.5px 1.5px at 58% 48%, rgba(255,255,255,0.8) 0%, transparent 100%)",
-            ].join(","),
-            zIndex: 0,
-          }}
-        />
-
-        {/* Nebula glow */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "radial-gradient(ellipse 120px 80px at 10% 50%, rgba(80,20,160,0.25) 0%, transparent 70%), " +
-              "radial-gradient(ellipse 100px 60px at 90% 50%, rgba(160,60,0,0.2) 0%, transparent 70%)",
-            zIndex: 0,
-          }}
-        />
-
-        {/* Left planet */}
-        <div
-          style={{
-            position: "absolute",
-            left: "0.3rem",
-            top: "50%",
-            transform: "translateY(-50%)",
-            width: "32px",
-            height: "32px",
-            borderRadius: "50%",
-            background: planets.left.gradient,
-            boxShadow: `0 0 12px ${planets.left.glow}, inset -3px -3px 8px rgba(0,0,0,0.5)`,
-            zIndex: 2,
-          }}
-        />
-
-        {/* Right planet */}
-        <div
-          style={{
-            position: "absolute",
-            right: "0.3rem",
-            top: "50%",
-            transform: "translateY(-50%)",
-            width: "32px",
-            height: "32px",
-            borderRadius: "50%",
-            background: planets.right.gradient,
-            boxShadow: `0 0 12px ${planets.right.glow}, inset -3px -3px 8px rgba(0,0,0,0.5)`,
-            zIndex: 2,
-          }}
-        />
-
-        {/* Tilted screen / image frame */}
-        <div
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
           style={{
             position: "relative",
-            width: "74%",
-            height: "82%",
-            borderRadius: "10px",
+            height: "220px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             overflow: "hidden",
-            border: "1.5px solid rgba(255,255,255,0.12)",
-            boxShadow: "0 0 0 1px rgba(255,255,255,0.04), 0 8px 40px rgba(0,0,0,0.8)",
-            transform: `perspective(600px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
-            transition: "transform 0.1s ease-out",
-            zIndex: 1,
+            background: "radial-gradient(ellipse at 20% 50%, #0d0826 0%, #060414 60%, #000 100%)",
           }}
         >
-          <img
-            src={imageSrc}
-            alt={imageAlt}
-            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          {/* Starfield */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              backgroundImage: [
+                "radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.9) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 28% 72%, rgba(255,255,255,0.7) 0%, transparent 100%)",
+                "radial-gradient(1.5px 1.5px at 45% 30%, rgba(255,255,255,1) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 62% 85%, rgba(255,255,255,0.6) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 78% 20%, rgba(255,255,255,0.8) 0%, transparent 100%)",
+                "radial-gradient(1.5px 1.5px at 88% 55%, rgba(255,255,255,0.9) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 5% 60%, rgba(255,255,255,0.5) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 35% 10%, rgba(255,255,255,0.7) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 93% 40%, rgba(255,255,255,0.6) 0%, transparent 100%)",
+                "radial-gradient(1.5px 1.5px at 82% 78%, rgba(255,255,255,0.8) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 18% 45%, rgba(255,255,255,0.7) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 52% 15%, rgba(255,255,255,0.6) 0%, transparent 100%)",
+                "radial-gradient(1.5px 1.5px at 68% 92%, rgba(255,255,255,0.8) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 25% 88%, rgba(255,255,255,0.5) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 75% 35%, rgba(255,255,255,0.7) 0%, transparent 100%)",
+                "radial-gradient(1.5px 1.5px at 38% 62%, rgba(255,255,255,0.9) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 85% 8%, rgba(255,255,255,0.6) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 8% 28%, rgba(255,255,255,0.5) 0%, transparent 100%)",
+                "radial-gradient(1px 1px at 95% 68%, rgba(255,255,255,0.7) 0%, transparent 100%)",
+                "radial-gradient(1.5px 1.5px at 58% 48%, rgba(255,255,255,0.8) 0%, transparent 100%)",
+              ].join(","),
+              zIndex: 0,
+            }}
           />
+
+          {/* Nebula glow */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "radial-gradient(ellipse 120px 80px at 10% 50%, rgba(80,20,160,0.25) 0%, transparent 70%), " +
+                "radial-gradient(ellipse 100px 60px at 90% 50%, rgba(160,60,0,0.2) 0%, transparent 70%)",
+              zIndex: 0,
+            }}
+          />
+
+          {/* Left planet */}
+          <div
+            style={{
+              position: "absolute",
+              left: "0.3rem",
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "32px",
+              height: "32px",
+              borderRadius: "50%",
+              background: planets.left.gradient,
+              boxShadow: `0 0 12px ${planets.left.glow}, inset -3px -3px 8px rgba(0,0,0,0.5)`,
+              zIndex: 2,
+            }}
+          />
+
+          {/* Right planet */}
+          <div
+            style={{
+              position: "absolute",
+              right: "0.3rem",
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "32px",
+              height: "32px",
+              borderRadius: "50%",
+              background: planets.right.gradient,
+              boxShadow: `0 0 12px ${planets.right.glow}, inset -3px -3px 8px rgba(0,0,0,0.5)`,
+              zIndex: 2,
+            }}
+          />
+
+          {/* Image frame */}
+          <div
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{
+              position: "relative",
+              width: "74%",
+              height: "82%",
+              borderRadius: "10px",
+              overflow: "hidden",
+              border: "1.5px solid rgba(255,255,255,0.12)",
+              boxShadow: "0 0 0 1px rgba(255,255,255,0.04), 0 8px 40px rgba(0,0,0,0.8)",
+              transform: `perspective(600px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
+              transition: "transform 0.1s ease-out",
+              zIndex: 1,
+            }}
+          >
+            <img
+              src={imageSrc}
+              alt={imageAlt}
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+            />
+          </div>
+        </div>
+
+        {/* Card Body */}
+        <div style={{ padding: "14px 20px 16px", background: "#1a1730" }}>
+          <h2 style={{ fontSize: "19px", fontWeight: 800, color: "white", marginBottom: "8px", lineHeight: "1.2", letterSpacing: "-0.3px" }}>
+            {title}
+          </h2>
+          <p style={{
+            fontSize: "13px",
+            color: "rgba(200,195,220,0.75)",
+            lineHeight: "1.55",
+            fontWeight: 300,
+            marginBottom: "16px",
+            overflow: "hidden",
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: "vertical"
+          }}>
+            {description}
+          </p>
+
+          {/* Footer */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+              {techBadges.slice(0, 5).map((b, idx) => (
+                <div
+                  key={idx}
+                  title={b.title}
+                  style={{
+                    width: "30px",
+                    height: "30px",
+                    borderRadius: "8px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: b.fontSize || "14px",
+                    fontWeight: b.fontWeight || "normal",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    background: b.bg,
+                    color: b.color,
+                  }}
+                >
+                  {b.label}
+                </div>
+              ))}
+            </div>
+
+            <button style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "13px", color: "rgba(180,170,210,0.8)", fontWeight: 500, background: "none", border: "none", cursor: "pointer" }}>
+              Details
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M2 10L10 2M10 2H4M10 2v6" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* ── Card Body ── */}
-      <div style={{ padding: "14px 20px 16px", background: "#1a1730" }}>
-        <h2 style={{ fontSize: "19px", fontWeight: 800, color: "white", marginBottom: "8px", lineHeight: "1.2", letterSpacing: "-0.3px" }}>
-          {title}
-        </h2>
-        <p style={{
-          fontSize: "13px",
-          color: "rgba(200,195,220,0.75)",
-          lineHeight: "1.55",
-          fontWeight: 300,
-          marginBottom: "16px",
-          overflow: "hidden",
-          display: "-webkit-box",
-          WebkitLineClamp: 3,
-          WebkitBoxOrient: "vertical"
-        }}>
-          {description}
-        </p>
+      {/* Expanded Modal */}
+      {isExpanded && (
+        <div
+          onClick={() => setIsExpanded(false)}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: "rgba(0, 3, 25, 0.75)",
+            backdropFilter: "blur(8px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999,
+            padding: "2rem",
+            animation: "fadeIn 0.3s ease-out",
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: "100%",
+              maxWidth: "900px",
+              maxHeight: "90vh",
+              borderRadius: "20px",
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.12)",
+              background: "#1a1730",
+              boxShadow: "0 0 60px rgba(203, 172, 249, 0.3), 0 32px 120px rgba(0,0,0,0.9)",
+              animation: "scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setIsExpanded(false)}
+              style={{
+                position: "absolute",
+                top: "1rem",
+                right: "1rem",
+                width: "40px",
+                height: "40px",
+                borderRadius: "50%",
+                background: "rgba(255,255,255,0.1)",
+                border: "1px solid rgba(255,255,255,0.2)",
+                color: "white",
+                fontSize: "24px",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                zIndex: 10,
+                transition: "all 0.2s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.2)";
+                e.currentTarget.style.transform = "scale(1.1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+            >
+              ×
+            </button>
 
-        {/* Footer */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-            {techBadges.map((b) => (
+            {/* Scrollable content */}
+            <div style={{ overflowY: "auto", overflowX: "hidden" }}>
+              {/* Image Slider Container */}
               <div
-                key={b.title}
-                title={b.title}
                 style={{
-                  width: "30px",
-                  height: "30px",
-                  borderRadius: "8px",
+                  position: "relative",
+                  height: "400px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: b.fontSize || "14px",
-                  fontWeight: b.fontWeight || "normal",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  background: b.bg,
-                  color: b.color,
+                  overflow: "hidden",
+                  background: "radial-gradient(ellipse at 20% 50%, #0d0826 0%, #060414 60%, #000 100%)",
                 }}
               >
-                {b.label}
+                {/* Starfield */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    backgroundImage: [
+                      "radial-gradient(2px 2px at 15% 20%, rgba(255,255,255,0.9) 0%, transparent 100%)",
+                      "radial-gradient(1.5px 1.5px at 35% 75%, rgba(255,255,255,0.7) 0%, transparent 100%)",
+                      "radial-gradient(2px 2px at 50% 35%, rgba(255,255,255,1) 0%, transparent 100%)",
+                      "radial-gradient(1px 1px at 68% 88%, rgba(255,255,255,0.6) 0%, transparent 100%)",
+                      "radial-gradient(1.5px 1.5px at 80% 25%, rgba(255,255,255,0.8) 0%, transparent 100%)",
+                      "radial-gradient(2px 2px at 90% 60%, rgba(255,255,255,0.9) 0%, transparent 100%)",
+                      "radial-gradient(1px 1px at 8% 65%, rgba(255,255,255,0.5) 0%, transparent 100%)",
+                      "radial-gradient(1.5px 1.5px at 42% 12%, rgba(255,255,255,0.7) 0%, transparent 100%)",
+                      "radial-gradient(1px 1px at 95% 45%, rgba(255,255,255,0.6) 0%, transparent 100%)",
+                      "radial-gradient(2px 2px at 25% 85%, rgba(255,255,255,0.8) 0%, transparent 100%)",
+                    ].join(","),
+                    zIndex: 0,
+                  }}
+                />
+
+                {/* Nebula glow */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "radial-gradient(ellipse 200px 120px at 15% 50%, rgba(80,20,160,0.25) 0%, transparent 70%), " +
+                      "radial-gradient(ellipse 180px 100px at 85% 50%, rgba(160,60,0,0.2) 0%, transparent 70%)",
+                    zIndex: 0,
+                  }}
+                />
+
+                {/* Larger planets */}
+                <div
+                  style={{
+                    position: "absolute",
+                    left: "2rem",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    width: "60px",
+                    height: "60px",
+                    borderRadius: "50%",
+                    background: planets.left.gradient,
+                    boxShadow: `0 0 30px ${planets.left.glow}, inset -6px -6px 15px rgba(0,0,0,0.5)`,
+                    zIndex: 2,
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: "absolute",
+                    right: "2rem",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    width: "60px",
+                    height: "60px",
+                    borderRadius: "50%",
+                    background: planets.right.gradient,
+                    boxShadow: `0 0 30px ${planets.right.glow}, inset -6px -6px 15px rgba(0,0,0,0.5)`,
+                    zIndex: 2,
+                  }}
+                />
+
+                {/* Image with slider controls */}
+                <div
+                  style={{
+                    position: "relative",
+                    width: "70%",
+                    height: "80%",
+                    borderRadius: "15px",
+                    overflow: "hidden",
+                    border: "2px solid rgba(255,255,255,0.15)",
+                    boxShadow: "0 0 0 1px rgba(255,255,255,0.06), 0 10px 50px rgba(0,0,0,0.9)",
+                    zIndex: 1,
+                  }}
+                >
+                  <img
+                    src={allImages[currentImageIndex]}
+                    alt={`${title} - Image ${currentImageIndex + 1}`}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+
+                  {/* Navigation arrows */}
+                  {allImages.length > 1 && (
+                    <>
+                      <button
+                        onClick={prevImage}
+                        style={{
+                          position: "absolute",
+                          left: "1rem",
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                          width: "40px",
+                          height: "40px",
+                          borderRadius: "50%",
+                          background: "rgba(0,0,0,0.5)",
+                          border: "1px solid rgba(255,255,255,0.3)",
+                          color: "white",
+                          fontSize: "20px",
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          transition: "all 0.2s",
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.background = "rgba(0,0,0,0.8)"}
+                        onMouseLeave={(e) => e.currentTarget.style.background = "rgba(0,0,0,0.5)"}
+                      >
+                        ‹
+                      </button>
+                      <button
+                        onClick={nextImage}
+                        style={{
+                          position: "absolute",
+                          right: "1rem",
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                          width: "40px",
+                          height: "40px",
+                          borderRadius: "50%",
+                          background: "rgba(0,0,0,0.5)",
+                          border: "1px solid rgba(255,255,255,0.3)",
+                          color: "white",
+                          fontSize: "20px",
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          transition: "all 0.2s",
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.background = "rgba(0,0,0,0.8)"}
+                        onMouseLeave={(e) => e.currentTarget.style.background = "rgba(0,0,0,0.5)"}
+                      >
+                        ›
+                      </button>
+
+                      {/* Image indicator dots */}
+                      <div style={{ position: "absolute", bottom: "1rem", left: "50%", transform: "translateX(-50%)", display: "flex", gap: "8px" }}>
+                        {allImages.map((_, idx) => (
+                          <div
+                            key={idx}
+                            onClick={() => setCurrentImageIndex(idx)}
+                            style={{
+                              width: currentImageIndex === idx ? "24px" : "8px",
+                              height: "8px",
+                              borderRadius: "4px",
+                              background: currentImageIndex === idx ? "rgba(203, 172, 249, 0.9)" : "rgba(255,255,255,0.3)",
+                              cursor: "pointer",
+                              transition: "all 0.3s",
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
-            ))}
+
+              {/* Modal Body */}
+              <div style={{ padding: "2rem", background: "#1a1730" }}>
+                <h2 style={{ fontSize: "28px", fontWeight: 800, color: "white", marginBottom: "12px", lineHeight: "1.2" }}>
+                  {title}
+                </h2>
+                <p style={{ fontSize: "15px", color: "rgba(200,195,220,0.85)", lineHeight: "1.7", fontWeight: 300, marginBottom: "24px" }}>
+                  {description}
+                </p>
+
+                {/* Technologies */}
+                {technologies.length > 0 && (
+                  <div style={{ marginBottom: "24px" }}>
+                    <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#CBACF9", marginBottom: "12px" }}>
+                      Technologies
+                    </h3>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+                      {technologies.map((tech, idx) => (
+                        <div
+                          key={idx}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "8px",
+                            padding: "8px 16px",
+                            borderRadius: "10px",
+                            background: "rgba(203, 172, 249, 0.1)",
+                            border: "1px solid rgba(203, 172, 249, 0.2)",
+                          }}
+                        >
+                          {tech.logo && (
+                            <img src={tech.logo} alt={tech.name} style={{ width: "20px", height: "20px" }} />
+                          )}
+                          <span style={{ fontSize: "14px", color: "rgba(200,195,220,0.9)", fontWeight: 500 }}>
+                            {tech.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Links */}
+                {links.length > 0 && (
+                  <div>
+                    <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#CBACF9", marginBottom: "12px" }}>
+                      Links
+                    </h3>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+                      {links.map((link, idx) => (
+                        <a
+                          key={idx}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "8px",
+                            padding: "10px 20px",
+                            borderRadius: "10px",
+                            background: "rgba(203, 172, 249, 0.15)",
+                            border: "1px solid rgba(203, 172, 249, 0.3)",
+                            color: "white",
+                            textDecoration: "none",
+                            fontSize: "14px",
+                            fontWeight: 600,
+                            transition: "all 0.2s",
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = "rgba(203, 172, 249, 0.25)";
+                            e.currentTarget.style.transform = "translateY(-2px)";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.background = "rgba(203, 172, 249, 0.15)";
+                            e.currentTarget.style.transform = "translateY(0)";
+                          }}
+                        >
+                          {link.logo && (
+                            <img src={link.logo} alt={link.name} style={{ width: "18px", height: "18px" }} />
+                          )}
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
-          
-          <button style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "13px", color: "rgba(180,170,210,0.8)", fontWeight: 500, background: "none", border: "none", cursor: "pointer" }}>
-            Details
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8">
-              <path d="M2 10L10 2M10 2H4M10 2v6" />
-            </svg>
-          </button>
         </div>
-      </div>
-    </div>
+      )}
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      `}</style>
+    </>
   );
 }
