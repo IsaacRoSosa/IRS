@@ -30,6 +30,7 @@ function ExperienceSection() {
               imageSrc={project.image}
               title={project.title}
               description={project.description}
+              expandDescription={project.expandDescription}
               technologies={project.technologies || []}
               links={project.links || []}
               images={project.images || []}

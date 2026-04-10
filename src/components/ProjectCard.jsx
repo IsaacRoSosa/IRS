@@ -1,13 +1,73 @@
 "use client";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const techBadges = [
-  { label: "⚛", bg: "rgba(56, 189, 248, 0.15)", color: "rgb(125, 211, 252)", title: "React" },
-  { label: "~", bg: "rgba(34, 211, 238, 0.15)", color: "rgb(103, 232, 249)", title: "Tailwind" },
-  { label: "TS", bg: "rgba(59, 130, 246, 0.15)", color: "rgb(96, 165, 250)", title: "TypeScript", fontSize: "9px", fontWeight: 900 },
-  { label: "▲", bg: "rgba(255,255,255,0.08)", color: "white", title: "Three.js" },
-  { label: "M", bg: "rgba(168, 85, 247, 0.2)", color: "rgb(216, 180, 254)", title: "Motion", fontWeight: "bold" },
-];
+const techBadgeStyles = {
+  // JavaScript Frameworks & Libraries
+  "React": { label: "⚛", bg: "rgba(56, 189, 248, 0.15)", color: "rgb(125, 211, 252)" },
+  "React.js": { label: "⚛", bg: "rgba(56, 189, 248, 0.15)", color: "rgb(125, 211, 252)" },
+  "Next.js": { label: "▲", bg: "rgba(255,255,255,0.08)", color: "white" },
+  "NextJs": { label: "▲", bg: "rgba(255,255,255,0.08)", color: "white" },
+  "Vue": { label: "V", bg: "rgba(52, 211, 153, 0.15)", color: "rgb(110, 231, 183)", fontWeight: "bold" },
+  "Angular": { label: "A", bg: "rgba(239, 68, 68, 0.15)", color: "rgb(252, 165, 165)", fontWeight: "bold" },
+  "Vite": { label: "⚡", bg: "rgba(168, 85, 247, 0.15)", color: "rgb(196, 181, 253)" },
+
+  // Languages
+  "JavaScript": { label: "JS", bg: "rgba(251, 191, 36, 0.15)", color: "rgb(253, 224, 71)", fontSize: "9px", fontWeight: 900 },
+  "javascript": { label: "JS", bg: "rgba(251, 191, 36, 0.15)", color: "rgb(253, 224, 71)", fontSize: "9px", fontWeight: 900 },
+  "TypeScript": { label: "TS", bg: "rgba(59, 130, 246, 0.15)", color: "rgb(96, 165, 250)", fontSize: "9px", fontWeight: 900 },
+  "Python": { label: "Py", bg: "rgba(59, 130, 246, 0.15)", color: "rgb(147, 197, 253)", fontSize: "9px", fontWeight: 900 },
+  "C#": { label: "C#", bg: "rgba(139, 92, 246, 0.15)", color: "rgb(196, 181, 253)", fontSize: "9px", fontWeight: 900 },
+  "PHP": { label: "PHP", bg: "rgba(139, 92, 246, 0.15)", color: "rgb(167, 139, 250)", fontSize: "8px", fontWeight: 900 },
+  "Swift": { label: "🦅", bg: "rgba(249, 115, 22, 0.15)", color: "rgb(251, 146, 60)" },
+
+  // Styling
+  "CSS": { label: "~", bg: "rgba(34, 211, 238, 0.15)", color: "rgb(103, 232, 249)" },
+  "Tailwind": { label: "~", bg: "rgba(34, 211, 238, 0.15)", color: "rgb(103, 232, 249)" },
+  "HTML": { label: "<>", bg: "rgba(249, 115, 22, 0.15)", color: "rgb(251, 146, 60)", fontSize: "11px" },
+
+  // Databases & Backend
+  "PostgreSQL": { label: "🐘", bg: "rgba(59, 130, 246, 0.15)", color: "rgb(96, 165, 250)" },
+  "MySQL": { label: "DB", bg: "rgba(34, 211, 238, 0.15)", color: "rgb(103, 232, 249)", fontSize: "9px", fontWeight: 900 },
+  "My SQL": { label: "DB", bg: "rgba(34, 211, 238, 0.15)", color: "rgb(103, 232, 249)", fontSize: "9px", fontWeight: 900 },
+  "Supabase": { label: "S", bg: "rgba(52, 211, 153, 0.15)", color: "rgb(110, 231, 183)", fontWeight: "bold" },
+  "Oracle": { label: "🔴", bg: "rgba(239, 68, 68, 0.15)", color: "rgb(252, 165, 165)" },
+  "Oracle APEX": { label: "⚡", bg: "rgba(239, 68, 68, 0.15)", color: "rgb(252, 165, 165)" },
+  "APEX": { label: "⚡", bg: "rgba(239, 68, 68, 0.15)", color: "rgb(252, 165, 165)" },
+
+  // Other Tools
+  "Unity": { label: "U", bg: "rgba(71, 85, 105, 0.15)", color: "rgb(148, 163, 184)", fontWeight: "bold" },
+  "Three.js": { label: "3D", bg: "rgba(255,255,255,0.08)", color: "white", fontSize: "9px", fontWeight: 900 },
+  "Flask": { label: "F", bg: "rgba(71, 85, 105, 0.15)", color: "rgb(148, 163, 184)", fontWeight: "bold" },
+  "FastAPI": { label: "⚡", bg: "rgba(52, 211, 153, 0.15)", color: "rgb(110, 231, 183)" },
+  "TensorFlow": { label: "TF", bg: "rgba(249, 115, 22, 0.15)", color: "rgb(251, 146, 60)", fontSize: "9px", fontWeight: 900 },
+  "Matplotlib": { label: "📊", bg: "rgba(59, 130, 246, 0.15)", color: "rgb(96, 165, 250)" },
+  "Numpy": { label: "N", bg: "rgba(59, 130, 246, 0.15)", color: "rgb(147, 197, 253)", fontWeight: "bold" },
+  "Motion": { label: "M", bg: "rgba(168, 85, 247, 0.2)", color: "rgb(216, 180, 254)", fontWeight: "bold" },
+  "Vercel": { label: "▲", bg: "rgba(255,255,255,0.08)", color: "white" },
+  "TanStack Query": { label: "TQ", bg: "rgba(239, 68, 68, 0.15)", color: "rgb(252, 165, 165)", fontSize: "9px", fontWeight: 900 },
+  "TanStack Router": { label: "TR", bg: "rgba(239, 68, 68, 0.15)", color: "rgb(252, 165, 165)", fontSize: "9px", fontWeight: 900 },
+  "Spotify API": { label: "🎵", bg: "rgba(52, 211, 153, 0.15)", color: "rgb(110, 231, 183)" },
+  "Google Gemini AI": { label: "✨", bg: "rgba(59, 130, 246, 0.15)", color: "rgb(147, 197, 253)" },
+  "SQLite": { label: "DB", bg: "rgba(148, 163, 184, 0.15)", color: "rgb(203, 213, 225)", fontSize: "9px", fontWeight: 900 },
+  "Chart.js": { label: "📈", bg: "rgba(251, 191, 36, 0.15)", color: "rgb(253, 224, 71)" },
+
+  // Swift/iOS Tools
+  "RealityKit": { label: "🥽", bg: "rgba(249, 115, 22, 0.15)", color: "rgb(251, 146, 60)" },
+  "CreateML": { label: "🧠", bg: "rgba(249, 115, 22, 0.15)", color: "rgb(251, 146, 60)" },
+  "CoreML": { label: "🤖", bg: "rgba(249, 115, 22, 0.15)", color: "rgb(251, 146, 60)" },
+  "WidgetKit": { label: "📱", bg: "rgba(249, 115, 22, 0.15)", color: "rgb(251, 146, 60)" },
+
+  // 3D & Design
+  "Blender": { label: "🎨", bg: "rgba(249, 115, 22, 0.15)", color: "rgb(251, 146, 60)" },
+
+  // Default fallback
+  "default": { label: "•", bg: "rgba(148, 163, 184, 0.15)", color: "rgb(203, 213, 225)" }
+};
+
+// Helper function to get badge style for a technology
+const getTechBadgeStyle = (techName) => {
+  return techBadgeStyles[techName] || techBadgeStyles["default"];
+};
 
 const planetColors = [
   {
@@ -45,6 +105,7 @@ export default function ProjectCard({
   imageAlt = "Project preview",
   title = "Project Title",
   description = "Description not provided.",
+  expandDescription = "",
   technologies = [],
   links = [],
   images = [],
@@ -53,14 +114,14 @@ export default function ProjectCard({
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Generate random planets for this card
-  const planets = useMemo(() => {
+  // Generate random planets for this card (only once, using useState for stability)
+  const [planets] = useState(() => {
     const shuffled = [...planetColors].sort(() => Math.random() - 0.5);
     return {
       left: shuffled[0],
       right: shuffled[1]
     };
-  }, []);
+  });
 
   const allImages = images.length > 0 ? images : [imageSrc];
 
@@ -143,6 +204,7 @@ export default function ProjectCard({
             justifyContent: "center",
             overflow: "hidden",
             background: "radial-gradient(ellipse at 20% 50%, #0d0826 0%, #060414 60%, #000 100%)",
+            objectFit: "contain",
           }}
         >
           {/* Starfield */}
@@ -182,8 +244,8 @@ export default function ProjectCard({
               position: "absolute",
               inset: 0,
               background:
-                "radial-gradient(ellipse 120px 80px at 10% 50%, rgba(80,20,160,0.25) 0%, transparent 70%), " +
-                "radial-gradient(ellipse 100px 60px at 90% 50%, rgba(160,60,0,0.2) 0%, transparent 70%)",
+                `radial-gradient(ellipse 120px 80px at 10% 50%, ${planets.left.glow.replace('0.5', '0.25')} 0%, transparent 70%), ` +
+                `radial-gradient(ellipse 100px 60px at 90% 50%, ${planets.right.glow.replace('0.5', '0.2')} 0%, transparent 70%)`,
               zIndex: 0,
             }}
           />
@@ -240,7 +302,7 @@ export default function ProjectCard({
             <img
               src={imageSrc}
               alt={imageAlt}
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
             />
           </div>
         </div>
@@ -267,27 +329,44 @@ export default function ProjectCard({
           {/* Footer */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-              {techBadges.slice(0, 5).map((b, idx) => (
-                <div
-                  key={idx}
-                  title={b.title}
-                  style={{
-                    width: "30px",
-                    height: "30px",
-                    borderRadius: "8px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: b.fontSize || "14px",
-                    fontWeight: b.fontWeight || "normal",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    background: b.bg,
-                    color: b.color,
-                  }}
-                >
-                  {b.label}
-                </div>
-              ))}
+              {technologies.slice(0, 5).map((tech, idx) => {
+                const badgeStyle = getTechBadgeStyle(tech.name);
+                return (
+                  <div
+                    key={idx}
+                    title={tech.name}
+                    style={{
+                      width: "30px",
+                      height: "30px",
+                      borderRadius: "8px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: badgeStyle.fontSize || "14px",
+                      fontWeight: badgeStyle.fontWeight || "normal",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      background: badgeStyle.bg,
+                      color: badgeStyle.color,
+                      padding: "4px",
+                    }}
+                  >
+                    {tech.logo ? (
+                      <img
+                        src={tech.logo}
+                        alt={tech.name}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                          filter: "brightness(1.1)"
+                        }}
+                      />
+                    ) : (
+                      badgeStyle.label
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
             <button style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "13px", color: "rgba(180,170,210,0.8)", fontWeight: 500, background: "none", border: "none", cursor: "pointer" }}>
@@ -410,8 +489,8 @@ export default function ProjectCard({
                     position: "absolute",
                     inset: 0,
                     background:
-                      "radial-gradient(ellipse 200px 120px at 15% 50%, rgba(80,20,160,0.25) 0%, transparent 70%), " +
-                      "radial-gradient(ellipse 180px 100px at 85% 50%, rgba(160,60,0,0.2) 0%, transparent 70%)",
+                      `radial-gradient(ellipse 200px 120px at 15% 50%, ${planets.left.glow.replace('0.5', '0.25')} 0%, transparent 70%), ` +
+                      `radial-gradient(ellipse 180px 100px at 85% 50%, ${planets.right.glow.replace('0.5', '0.2')} 0%, transparent 70%)`,
                     zIndex: 0,
                   }}
                 />
@@ -463,7 +542,7 @@ export default function ProjectCard({
                   <img
                     src={allImages[currentImageIndex]}
                     alt={`${title} - Image ${currentImageIndex + 1}`}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
                   />
 
                   {/* Navigation arrows */}
@@ -548,7 +627,7 @@ export default function ProjectCard({
                   {title}
                 </h2>
                 <p style={{ fontSize: "15px", color: "rgba(200,195,220,0.85)", lineHeight: "1.7", fontWeight: 300, marginBottom: "24px" }}>
-                  {description}
+                  {expandDescription }
                 </p>
 
                 {/* Technologies */}
