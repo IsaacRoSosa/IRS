@@ -1,19 +1,21 @@
 [
    {
     "id": 1,
-    "image": "/Projects/bread.jpeg",
+    "image": "/Projects/PanApp.png",
     "images": [],
-    "title": "Panaderia",
-    "description": "Panaderia",
+    "title": "Maseria App",
+    "description": "{Name to be defined} is a mobile and web application designed to help small bakeries manage their inventory, sales and optimize their operations.  ",
+    "expandDescription": "The application provides features such as inventory management, sales tracking, and analytics to help bakery owners make informed decisions. The mobile app allows employees to easily update inventory and process sales, while the web dashboard provides insights into business performance and customer preferences.",
     "technologies": [
-      { "name": "NextJs", "logo": "/Logos/Tools/nextjs.png" },
-      { "name": "React", "logo": "/Logos/Tools/react.png" },
+      { "name": "Swift", "logo": "/Logos/Languages/swift.png" },
+      { "name": "Next.js", "logo": "/Logos/Tools/nextjs.png" },
       { "name": "TypeScript", "logo": "/Logos/Languages/typescript.png" },
-      { "name": "CSS", "logo": "/Logos/Tools/css.png" }
+      { "name": "Supabase", "logo": "/Logos/Tools/supabase.png" },
+      { "name": "Tailwind", "logo": "/Logos/Tools/tailwind.png" },
+      { "name": "Vercel", "logo": "/Logos/Tools/Vercel.png" }
     ],
     "links": [
-      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/davidballezaa/iglesia" },
-      { "name": "Video Demo", "logo": "/Logos/yt.png", "url": "https://youtu.be/seEyHl93n18" }
+    
     ]
   },
   {
@@ -26,14 +28,17 @@
       "/Projects/JobHill/JobHill4.png"
     ],
     "title": "JobHill",
-    "description": "Jobhill is a job search platform focused on providing the latest internship and new grad opportunities in the tech industry. Built for helping fellow stundents from Tec de Monterrey",
+    "description": "Jobhill is a job search platform focused on providing the latest internship and new grad opportunities in the tech industry. Built for helping fellow students from Tec de Monterrey",
+    "expandDescription": "JobHill is a modern job search platform designed specifically for Tec de Monterrey students seeking internships and new graduate positions in the tech industry. The platform aggregates the latest opportunities and presents them through an intuitive interface with advanced filtering by company, location, job type, and posting date. Users can personalize their experience by setting company preferences, favoriting positions, and tracking applications in a centralized dashboard. The application features a unique company-grouped view that allows students to explore all available positions at their target employers. With real-time data synchronization via Supabase, secure authentication, and a fully responsive design, JobHill streamlines the job search process and helps students efficiently navigate their career journey from discovery to application.",
     "technologies": [
       { "name": "NextJs", "logo": "/Logos/Tools/nextjs.png" },
-      { "name": "javascript", "logo": "/Logos/Languages/javascript.png" },
+      { "name": "TypeScript", "logo": "/Logos/Languages/typescript.png" },
       { "name": "Python", "logo": "/Logos/Languages/python.png" },
-      { "name": "PostgreSQL", "logo": "/Logos/Tools/postgresql.png" },
       { "name": "Supabase", "logo": "/Logos/Tools/supabase.png" },
-      { "name": "CSS", "logo": "/Logos/Tools/css.png" }
+      { "name": "Tailwind", "logo": "/Logos/Tools/tailwind.png" },
+      { "name": "TanStack Query", "logo": "/Logos/Languages/typescript.png" },
+      { "name": "PostgreSQL", "logo": "/Logos/Tools/postgresql.png" },
+      { "name": "Vercel", "logo": "/Logos/Tools/Vercel.png" }
     ],
     "links": [
       { "name": "Website", "logo": "/Logos/website-logo.png", "url": "https://www.jobhill.xyz/" }
@@ -43,34 +48,54 @@
     "id": 3,
     "image": "/Projects/CrossTalk.png",
     "title": "CrossTalk",
-    "description": "Description",
+    "description": "An AI-powered music visualization application that transforms Spotify playlists into an interactive 3D nucleus experience with emotional AI personalities.",
+    "expandDescription": "CrossTalk is an innovative web application that combines music analysis with immersive 3D visualization. It analyzes Spotify playlists using Google Gemini AI to understand the emotional depth of each track, then displays them in a unique orbital visualization system where songs orbit around a central nucleus based on their emotional intensity. The application features multiple AI personalities (Joy, Sadness, Anger, Fear, Love, and Surprise) that can chat with users about their music, providing personalized insights and recommendations. Users can interact with the 3D visualization, play tracks via YouTube integration, and explore their music library in an entirely new dimension.",
     "technologies": [
-      { "name": "Unity", "logo": "/Logos/Unity-logo.png" },
-      { "name": "C#", "logo": "/Logos/Languages/c.png" },
-      { "name": "CSS", "logo": "/Logos/Tools/css.png" },
-      { "name": "javaScript", "logo": "/Logos/Languages/javascript.png" },
-      { "name": "React.js", "logo": "/Logos/Tools/react.png" },
-      { "name": "Next.js", "logo": "/Logos/Tools/nextjs.png" },
-      { "name": "MySQL", "logo": "/Logos/Tools/mySql.png" }
+      { "name": "Spotify API", "logo": "/Logos/Tools/spotify.png" },
+      { "name": "Google Gemini AI", "logo": "/Logos/Tools/gemini.png" },
+      { "name": "TypeScript", "logo": "/Logos/Languages/typescript.png" },
+      { "name": "Three.js", "logo": "/Logos/Tools/threejs.png" },
+      { "name": "SQLite", "logo": "/Logos/Tools/sqlite.png" },
+      { "name": "React", "logo": "/Logos/Tools/react.png" },
+      { "name": "TanStack Router", "logo": "/Logos/Languages/typescript.png" },
+      { "name": "Tailwind", "logo": "/Logos/Tools/tailwind.png" }
     ],
     "links": [
-      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/IsaacRoSosa/EcoGuardian" },
-      { "name": "Video Demo", "logo": "/Logos/yt.png", "url": "https://youtu.be/DwJ_8V0cYkQ" },
-      { "name": "Website", "logo": "/Logos/website-logo.png", "url": "https://rock-well-factory-simulator.vercel.app/" }
+      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/ramiro-uziel/crosstalk" }
     ]
   },
   {
     "id": 4,
     "image": "/Projects/Papalote.png",
-    "title": "Papalote",
-    "description": "Papalote",
+    "images": [],
+    "title": "Papalote Museum App",
+    "description": "An iOS application designed to enhance the visitor experience at Papalote Museo del Niño by providing educational tools, interactive maps, and immersive augmented reality games.",
+    "expandDescription": "Papalote is a comprehensive iOS museum companion application developed for Papalote Museo del Niño that transforms how visitors explore and interact with exhibits. The app features an engaging AR scavenger hunt where users collect virtual cards throughout the museum using RealityKit-powered augmented reality experiences. Visitors can navigate effortlessly with an interactive map system that displays museum zones, exhibits, and real-time location tracking. The application leverages CreateML for AI-powered image recognition to identify exhibit elements and deliver contextual educational content. Users build personal collections of discovered exhibits, track exploration progress across different museum zones, and unlock achievements as they learn. With Swift and Supabase integration for real-time data synchronization, secure authentication, and a polished native iOS design, Papalote seamlessly bridges physical museum exploration with digital innovation, creating an engaging educational experience for children and families while supporting the museum's learning objectives.",
     "technologies": [
-      { "name": "React", "logo": "/Logos/Tools/react.png" },
-      { "name": "TypeScript", "logo": "/Logos/Languages/typescript.png" },
+      { "name": "Swift", "logo": "/Logos/Languages/swift.png" },
+      { "name": "RealityKit", "logo": "/Logos/Tools/realityKit.png" },
+      { "name": "CreateML", "logo": "/Logos/Tools/createML.png" },
+      { "name": "Supabase", "logo": "/Logos/Tools/supabase.png" },
+      { "name": "Blender", "logo": "/Logos/Languages/python.png" }
+    ],
+    "links": [
+      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/Saul0Delgado/MuseoPapaloteApp" },
+      { "name": "Video Demo", "logo": "/Logos/yt.png", "url": "https://youtube.com/watch?v=dEMFlyClquY&feature=youtu.be" }
+    ]
+  },
+  {
+    "id": 5,
+    "image": "/Projects/Innovaction.png",
+    "title": "Innovaction Gym Event Dashboard",
+    "description": "Innovaction Gym Event Dashboard is a comprehensive event management platform designed for Innovaction Gym to streamline event scheduling, attendance tracking, and analytics reporting.",
+    "expandDescription": "Innovaction Gym Event Dashboard is a full-stack web application built to manage and optimize event operations for Innovaction Gym. The platform enables administrators to create, schedule, and manage gym events through an intuitive calendar interface powered by React Big Calendar, while tracking attendance and engagement metrics in real-time. Users can browse upcoming events, register for sessions, and view detailed event information including location, capacity, and timing. The application features interactive data visualization using Chart.js to display key metrics such as attendance trends by month, event distribution by type and location, and user participation statistics. With Clerk authentication for secure user management, Google Maps integration for location services, and a Flask backend connected to MySQL for robust data storage, the dashboard provides a centralized hub for gym operations. The responsive design built with React and TypeScript ensures seamless access across devices, while React Router enables smooth navigation between event scheduling, reporting, and contact modules. This solution transforms manual event coordination into an automated, data-driven system that enhances member experience and operational efficiency.",
+    "technologies": [
       { "name": "Vite", "logo": "/Logos/Vite.png" },
-      { "name": "CSS", "logo": "/Logos/Tools/css.png" },
-      { "name": "My SQL", "logo": "/Logos/Tools/mySql.png" },
-      { "name": "Flask", "logo": "/Logos/Flask-logo.png" }
+      { "name": "TypeScript", "logo": "/Logos/Languages/typescript.png" },
+      { "name": "Flask", "logo": "/Logos/Flask-logo.png" },
+      { "name": "MySQL", "logo": "/Logos/Tools/mySql.png" },
+      { "name": "Chart.js", "logo": "/Logos/Languages/javascript.png" },
+      { "name": "CSS", "logo": "/Logos/Tools/css.png" }
     ],
     "links": [
       { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/Tect0r0/innovaction_dashboard" },
@@ -78,40 +103,19 @@
     ]
   },
   {
-    "id": 5,
-    "image": "/Projects/Innovaction.jpeg",
-    "title": "Innovaction Gym Event Dashboard",
-    "description": "Web application for the Innovaction Gym",
-    "technologies": [
-      { "name": "React", "logo": "/Logos/Tools/react.png" },
-      { "name": "JavaScript", "logo": "/Logos/Languages/javascript.png" },
-      { "name": "Python", "logo": "/Logos/Languages/python.png" },
-      { "name": "CSS", "logo": "/Logos/Tools/css.png" },
-      { "name": "TensorFlow", "logo": "/Logos/Tensorflow.png" },
-      { "name": "Matplotlib", "logo": "/Logos/matplotlib.png" },
-      { "name": "Numpy", "logo": "/Logos/numpy.svg" }
-    ],
-    "links": [
-      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/example/repo2" },
-      { "name": "Devpost", "logo": "/Logos/Devpost.png", "url": "https://devpost.com/software/olli-app" }
-    ]
-  },
-  {
     "id": 6,
-    "image": "/Projects/SwiftHack.jpeg",
-    "title": "Swift Hack",
-    "description": "Swift Hack  ",
+    "image": "/Projects/Gluco.png",
+    "title": "GlucoPredict",
+    "description": "GlucoPredict is a SwiftUI-native iOS app that helps people with diabetes anticipate glucose trends and make smarter meal and insulin decisions through predictive modeling and clinical insights.",
+    "expandDescription": "GlucoPredict is a comprehensive iOS health companion app developed for Swift Challenge Fest 2025 that empowers people with diabetes to proactively manage their condition through intelligent glucose forecasting and personalized insights. The app combines native SwiftUI design with advanced CoreML machine learning models and evidence-based clinical algorithms to predict future blood sugar levels based on meal composition, physical activity, insulin dosing, and individual metabolic patterns. Users can seamlessly log carbohydrate intake, medications, and glucose readings, then receive actionable predictions visualized through interactive Charts that transform complex data into clear, digestible insights. The application features real-time glucose tracking via WidgetKit home screen widgets and Live Activities powered by ActivityKit, keeping critical health information always accessible. An AI-powered meal planner leverages Google Gemini to generate personalized daily meal recommendations optimized for glucose stability. With Python and FastAPI providing robust backend processing for ML model training and food extraction, local data persistence through UserDefaults and JSON for privacy-first storage, and a focus on empowering proactive decision-making rather than reactive management, GlucoPredict bridges clinical accuracy with everyday usability to help users confidently navigate meals, exercise, and insulin therapy while maintaining optimal glucose control.",
     "technologies": [
-      { "name": "PHP", "logo": "/Logos/php-logo.png" },
-      { "name": "HTML", "logo": "/Logos/Tools/html.png" },
-      { "name": "CSS", "logo": "/Logos/Tools/css.png" },
-      { "name": "javaScript", "logo": "/Logos/Languages/javascript.png" },
-      { "name": "React.js", "logo": "/Logos/Tools/react.png" },
-      { "name": "MySQL", "logo": "/Logos/Tools/mySql.png" }
+      { "name": "Swift", "logo": "/Logos/Languages/swift.png" },
+      { "name": "CoreML", "logo": "/Logos/Tools/createML.png" },
+      { "name": "WidgetKit", "logo": "/Logos/Tools/widgetKit.png" },
+      { "name": "Google Gemini AI", "logo": "/Logos/Tools/gemini.png" },
+      { "name": "FastAPI", "logo": "/Logos/Languages/python.png" }
     ],
     "links": [
-      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/IsaacRoSosa/EcoGuardian" },
-      { "name": "Presentation Video (Spanish)", "logo": "/Logos/yt.png", "url": "https://example.com/project1" }
-    ]
+      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/roccolpz/SwiftChallengeFest" }    ]
   }
 ]
