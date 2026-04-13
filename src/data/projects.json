@@ -5,7 +5,10 @@
     "images": [],
     "title": "Maseria App",
     "description": "{Name to be defined} is a mobile and web application designed to help small bakeries manage their inventory, sales and optimize their operations.  ",
-    "expandDescription": "The application provides features such as inventory management, sales tracking, and analytics to help bakery owners make informed decisions. The mobile app allows employees to easily update inventory and process sales, while the web dashboard provides insights into business performance and customer preferences.",
+    "expandDescription": [
+      "The application provides features such as inventory management, sales tracking, and analytics to help bakery owners make informed decisions.",
+      "The mobile app allows employees to easily update inventory and process sales, while the web dashboard provides insights into business performance and customer preferences."
+    ],
     "technologies": [
       { "name": "Swift", "logo": "/Logos/Languages/swift.png" },
       { "name": "Next.js", "logo": "/Logos/Tools/nextjs.png" },
@@ -22,14 +25,17 @@
     "id": 2,
     "image": "/Projects/JobHill.png",
     "images": [
-      "/Projects/JobHill.png",
       "/Projects/JobHill/JobHill2.png",
       "/Projects/JobHill/JobHill3.png",
       "/Projects/JobHill/JobHill4.png"
     ],
     "title": "JobHill",
     "description": "Jobhill is a job search platform focused on providing the latest internship and new grad opportunities in the tech industry. Built for helping fellow students from Tec de Monterrey",
-    "expandDescription": "JobHill is a modern job search platform designed specifically for Tec de Monterrey students seeking internships and new graduate positions in the tech industry. The platform aggregates the latest opportunities and presents them through an intuitive interface with advanced filtering by company, location, job type, and posting date. Users can personalize their experience by setting company preferences, favoriting positions, and tracking applications in a centralized dashboard. The application features a unique company-grouped view that allows students to explore all available positions at their target employers. With real-time data synchronization via Supabase, secure authentication, and a fully responsive design, JobHill streamlines the job search process and helps students efficiently navigate their career journey from discovery to application.",
+    "expandDescription": [
+      "JobHill is a job board for Tec de Monterrey students to find tech internships and entry-level roles. I built it to simplify the search process by aggregating opportunities into a clean interface with filters for location, company, and job type.",
+      "The platform features a 'company-grouped' view, allowing users to see all open roles at specific target employers in one place. Students can also save favorite postings and track their application status through a personal dashboard.",
+      "I used Supabase for real-time data syncing and secure authentication, ensuring the dashboard stays updated across all devices while keeping user data private."
+    ],
     "technologies": [
       { "name": "NextJs", "logo": "/Logos/Tools/nextjs.png" },
       { "name": "TypeScript", "logo": "/Logos/Languages/typescript.png" },
@@ -48,8 +54,12 @@
     "id": 3,
     "image": "/Projects/CrossTalk.png",
     "title": "CrossTalk",
-    "description": "An AI-powered music visualization application that transforms Spotify playlists into an interactive 3D nucleus experience with emotional AI personalities.",
-    "expandDescription": "CrossTalk is an innovative web application that combines music analysis with immersive 3D visualization. It analyzes Spotify playlists using Google Gemini AI to understand the emotional depth of each track, then displays them in a unique orbital visualization system where songs orbit around a central nucleus based on their emotional intensity. The application features multiple AI personalities (Joy, Sadness, Anger, Fear, Love, and Surprise) that can chat with users about their music, providing personalized insights and recommendations. Users can interact with the 3D visualization, play tracks via YouTube integration, and explore their music library in an entirely new dimension.",
+    "description": "A 3D music visualizer that uses AI to analyze your playlists and build a personality profile based on your music taste.",
+    "expandDescription": [
+      "CrossTalk is a web app that turns Spotify playlists into an interactive 3D orbital system. By feeding song lyrics and emotional data into Google Gemini, the app creates a personality profile that describes the user through the music they listen to.",
+      "At the center of the 3D nucleus is an AI chat interface. This 'core' is grounded in the collective sentiment of the playlist, allowing users to discuss their musical habits and get personalized insights into their own listening patterns.",
+      "The team developed the 3D environment to map songs as orbital nodes based on their intensity. The final experience combines music analysis, 3D visualization, and natural language processing to offer a deeper look at the person behind the playlist."
+    ],
     "technologies": [
       { "name": "Spotify API", "logo": "/Logos/Tools/spotify.png" },
       { "name": "Google Gemini AI", "logo": "/Logos/Tools/gemini.png" },
@@ -69,8 +79,12 @@
     "image": "/Projects/Papalote.png",
     "images": [],
     "title": "Papalote Museum App",
-    "description": "An iOS application designed to enhance the visitor experience at Papalote Museo del Niño by providing educational tools, interactive maps, and immersive augmented reality games.",
-    "expandDescription": "Papalote is a comprehensive iOS museum companion application developed for Papalote Museo del Niño that transforms how visitors explore and interact with exhibits. The app features an engaging AR scavenger hunt where users collect virtual cards throughout the museum using RealityKit-powered augmented reality experiences. Visitors can navigate effortlessly with an interactive map system that displays museum zones, exhibits, and real-time location tracking. The application leverages CreateML for AI-powered image recognition to identify exhibit elements and deliver contextual educational content. Users build personal collections of discovered exhibits, track exploration progress across different museum zones, and unlock achievements as they learn. With Swift and Supabase integration for real-time data synchronization, secure authentication, and a polished native iOS design, Papalote seamlessly bridges physical museum exploration with digital innovation, creating an engaging educational experience for children and families while supporting the museum's learning objectives.",
+    "description": "An iOS app for Papalote Museo del Niño, featuring 3D maps and AR; voted best project among six competing teams.",
+    "expandDescription": [
+      "Developed as part of a 5-person team, this app was selected as the top project by the museum board out of six competing groups for its technical execution and user experience.",
+      "We built this app to make museum visits more interactive for kids and families. It features an AR scavenger hunt created with RealityKit, where visitors find and collect virtual cards by interacting with physical exhibits.",
+      "The app also uses a custom CreateML model for image recognition, allowing users to point their camera at an exhibit to unlock educational content and track their exploration progress via a Supabase backend."
+    ],
     "technologies": [
       { "name": "Swift", "logo": "/Logos/Languages/swift.png" },
       { "name": "RealityKit", "logo": "/Logos/Tools/realityKit.png" },
@@ -87,8 +101,12 @@
     "id": 5,
     "image": "/Projects/Innovaction.png",
     "title": "Innovaction Gym Event Dashboard",
-    "description": "Innovaction Gym Event Dashboard is a comprehensive event management platform designed for Innovaction Gym to streamline event scheduling, attendance tracking, and analytics reporting.",
-    "expandDescription": "Innovaction Gym Event Dashboard is a full-stack web application built to manage and optimize event operations for Innovaction Gym. The platform enables administrators to create, schedule, and manage gym events through an intuitive calendar interface powered by React Big Calendar, while tracking attendance and engagement metrics in real-time. Users can browse upcoming events, register for sessions, and view detailed event information including location, capacity, and timing. The application features interactive data visualization using Chart.js to display key metrics such as attendance trends by month, event distribution by type and location, and user participation statistics. With Clerk authentication for secure user management, Google Maps integration for location services, and a Flask backend connected to MySQL for robust data storage, the dashboard provides a centralized hub for gym operations. The responsive design built with React and TypeScript ensures seamless access across devices, while React Router enables smooth navigation between event scheduling, reporting, and contact modules. This solution transforms manual event coordination into an automated, data-driven system that enhances member experience and operational efficiency.",
+    "description": "A management dashboard built for Innovaction Gym to handle event scheduling and member attendance.",
+    "expandDescription": [
+      "This was a collaborative project where my team of three developed a central hub for Innovaction Gym to manage their events. We built a calendar interface that replaced their manual scheduling process, making it easier for admins to organize sessions.",
+      "I worked on integrating Chart.js to visualize gym data, allowing the staff to see attendance trends and popular event locations through simple, interactive graphs.",
+      "The project was built using a React and TypeScript frontend with a Flask and MySQL backend. We also used Clerk to handle secure user sign-ins."
+    ],
     "technologies": [
       { "name": "Vite", "logo": "/Logos/Vite.png" },
       { "name": "TypeScript", "logo": "/Logos/Languages/typescript.png" },
@@ -107,7 +125,10 @@
     "image": "/Projects/Gluco.png",
     "title": "GlucoPredict",
     "description": "GlucoPredict is a SwiftUI-native iOS app that helps people with diabetes anticipate glucose trends and make smarter meal and insulin decisions through predictive modeling and clinical insights.",
-    "expandDescription": "GlucoPredict is a comprehensive iOS health companion app developed for Swift Challenge Fest 2025 that empowers people with diabetes to proactively manage their condition through intelligent glucose forecasting and personalized insights. The app combines native SwiftUI design with advanced CoreML machine learning models and evidence-based clinical algorithms to predict future blood sugar levels based on meal composition, physical activity, insulin dosing, and individual metabolic patterns. Users can seamlessly log carbohydrate intake, medications, and glucose readings, then receive actionable predictions visualized through interactive Charts that transform complex data into clear, digestible insights. The application features real-time glucose tracking via WidgetKit home screen widgets and Live Activities powered by ActivityKit, keeping critical health information always accessible. An AI-powered meal planner leverages Google Gemini to generate personalized daily meal recommendations optimized for glucose stability. With Python and FastAPI providing robust backend processing for ML model training and food extraction, local data persistence through UserDefaults and JSON for privacy-first storage, and a focus on empowering proactive decision-making rather than reactive management, GlucoPredict bridges clinical accuracy with everyday usability to help users confidently navigate meals, exercise, and insulin therapy while maintaining optimal glucose control.",
+    "expandDescription": [
+      "GlucoPredict is an iOS health app built for Swift Challenge Fest 2025 that helps people with diabetes stay ahead of their glucose levels. Instead of just tracking data, it uses CoreML to predict future blood sugar trends based on meals, exercise, and insulin doses.",
+      "The app was designed to be proactive rather than reactive. Users can log their day-to-day activity and see real-time updates via Live Activities and Widgets, while a Gemini-powered meal planner suggests food optimized for glucose stability."
+    ],
     "technologies": [
       { "name": "Swift", "logo": "/Logos/Languages/swift.png" },
       { "name": "CoreML", "logo": "/Logos/Tools/createML.png" },

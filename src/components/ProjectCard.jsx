@@ -105,7 +105,7 @@ export default function ProjectCard({
   imageAlt = "Project preview",
   title = "Project Title",
   description = "Description not provided.",
-  expandDescription = "",
+  expandDescription = [],
   technologies = [],
   links = [],
   images = [],
@@ -626,9 +626,17 @@ export default function ProjectCard({
                 <h2 style={{ fontSize: "28px", fontWeight: 800, color: "white", marginBottom: "12px", lineHeight: "1.2" }}>
                   {title}
                 </h2>
-                <p style={{ fontSize: "15px", color: "rgba(200,195,220,0.85)", lineHeight: "1.7", fontWeight: 300, marginBottom: "24px" }}>
-                  {expandDescription }
-                </p>
+                <div style={{ fontSize: "15px", color: "rgba(200,195,220,0.85)", lineHeight: "1.7", fontWeight: 300, marginBottom: "24px" }}>
+                  {Array.isArray(expandDescription) ? (
+                    expandDescription.map((paragraph, index) => (
+                      <p key={index} style={{ marginBottom: index < expandDescription.length - 1 ? "16px" : "0" }}>
+                        {paragraph}
+                      </p>
+                    ))
+                  ) : (
+                    <p>{expandDescription}</p>
+                  )}
+                </div>
 
                 {/* Technologies */}
                 {technologies.length > 0 && (
