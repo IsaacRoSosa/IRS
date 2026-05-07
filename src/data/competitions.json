@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "image": "Hacks/MontexTeam.jpeg",
+    "images": [],
+    "title": "DATATHON DSC",
+    "date": "MAY 2024",
+    "team": "MONTEX 🇲🇽",
+    "description": "Participated in my first Datathon hosted by Tecnologico de Monterrey's Data Science Club. Our team took on Hey Banco's challenge to create a costumer support dashboard that would help them improve their response time and overall service quality. It was an enlightening and enjoyable journey, revealing areas for improvement.",
+    "expandDescription": [
+      "Participated in my first Datathon hosted by Tecnologico de Monterrey's Data Science Club. Our team took on Hey Banco's challenge to create a costumer support dashboard that would help them improve their response time and overall service quality.",
+      "We analyzed customer support data to identify patterns and bottlenecks in the response system. Our dashboard provided real-time insights into response times, customer satisfaction metrics, and agent performance.",
+      "It was an enlightening and enjoyable journey, revealing areas for improvement in both data analysis and customer service optimization."
+    ],
+    "links": [
+      { "name": "LinkedIn Post", "logo": "/Logos/link2-logo.png", "url": "https://linkedin.com/in/example" },
+      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/Tect0r0/dsc2024" }
+    ],
+    "project": "Hey Banco - Costumer Support Dashboard"
+  },
+  {
+    "id": 2,
+    "image": "Hacks/TheMartIAns.jpeg",
+    "images": [],
+    "title": "LinceHacks",
+    "date": "MAY 2024",
+    "team": "The MartIAns 👽",
+    "description": "Participated in another exciting hackathon hosted by Universidad del Norte. Our team worked on a platform with interactive maps, where users can obtain a prediction with 90% accuracy regarding upcoming electrical consumption in the region. This tool is essential for efficient energy consumption planning and management, benefiting both authorities and citizens.",
+    "expandDescription": [
+      "Participated in another exciting hackathon hosted by Universidad del Norte. Our team worked on a platform with interactive maps, where users can obtain a prediction with 90% accuracy regarding upcoming electrical consumption in the region.",
+      "The OLLI App uses machine learning models to analyze historical electrical consumption data and predict future usage patterns. The interactive map interface allows users to explore predictions by region and time period.",
+      "This tool is essential for efficient energy consumption planning and management, benefiting both authorities and citizens by enabling better resource allocation and cost savings."
+    ],
+    "links": [
+      { "name": "Devpost", "logo": "/Logos/Devpost.png", "url": "https://devpost.com/software/olli-app" },
+      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/santiagosauma/OLLI-APP" }
+    ],
+    "project": "OLLI App"
+  },
+  {
+    "id": 3,
+    "image": "/Hacks/HackMTY2023.jpeg",
+    "images": [],
+    "title": "HackMTY",
+    "date": "SEP 2023",
+    "team": "Code Monkeys 🐵",
+    "description": "Participated in my first Hackathon. HackMTY is the largest hackathon in Mexico, hosted by Tec de Monterrey. Our team developed OptiFood, with OptiFood, users can register their pantry, and with a system powered by Artificial Inteligence, they can generate recipes giving priority to those that use their soon-to-expire foods, while also reminding them of set dates in order to avoid food waste. We even ended in the top 10 out of 130 teams!",
+    "expandDescription": [
+      "Participated in my first Hackathon. HackMTY is the largest hackathon in Mexico, hosted by Tec de Monterrey. Our team developed OptiFood to tackle the problem of food waste in households.",
+      "OptiFood allows users to register their pantry items with expiration dates. The AI-powered system generates personalized recipes that prioritize ingredients nearing expiration, helping users make the most of their food supplies while minimizing waste.",
+      "The app also sends reminders about expiring items and provides nutrition information for generated recipes. We even ended in the top 10 out of 130 teams, which was an incredible achievement for our first hackathon!"
+    ],
+    "links": [
+      { "name": "Devpost", "logo": "/Logos/Devpost.png", "url": "https://devpost.com/software/optifood" },
+      { "name": "Github Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/JesusRam04/Hackathon2023" }
+    ]
+  },
+  {
+    "id": 4,
+    "image": "Hacks/Atrato.jpeg",
+    "images": [],
+    "title": "Atrato Hack",
+    "date": "FEB 2024",
+    "team": "Codezilla 🦖",
+    "description": "Participated in another exciting hackathon hosted by Atrato. Our team worked on a chatbot, designed to answer finance-related questions, maintaining a professional and supportive profile for Atrato. It was a great opportunity to learn about the financial sector and chatbot development.",
+    "expandDescription": [
+      "Participated in another exciting hackathon hosted by Atrato. Our team developed Bamboo, an intelligent chatbot designed to answer finance-related questions while maintaining a professional and supportive tone aligned with Atrato's brand.",
+      "The chatbot leverages natural language processing to understand user queries and provide accurate, helpful responses about financial products, services, and general financial literacy topics.",
+      "It was a great opportunity to learn about the financial sector, chatbot development, and how AI can enhance customer service experiences in fintech."
+    ],
+    "links": [
+      { "name": "GitHub Repo", "logo": "/Logos/github-logo.png", "url": "https://github.com/davidballezaa/bamboo" }
+    ],
+    "project": "Bamboo"
+  }
+]

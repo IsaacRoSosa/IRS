@@ -38,8 +38,10 @@ function ExperienceSection() {
           ))}
         </div>
 
-        <h1 className="text-[2.7em] text-[#EEE2FF] max-md:text-center">Hackathons</h1>
-        <CompetitionSlider />
+        <h1 className="text-[2.7em] text-[#EEE2FF] max-md:text-center mt-6">Hackathons</h1>
+        <div className="w-full  flex items-center justify-center ">
+          <CompetitionSlider />
+        </div>
       </div>
     </div>
   )

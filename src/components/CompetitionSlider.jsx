@@ -1,58 +1,9 @@
 import React from 'react';
 import Slider from 'react-slick';
 import CompetitionCard from '@/components/CompetitionCard';
+import competitionsData from '@/data/competitions.json';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const competitions = [
-  {
-    image: 'Hacks/MontexTeam.jpeg',
-    title: 'DATATHON DSC',
-    date: 'MAY 2024',
-    team: 'MONTEX 🇲🇽',
-    description: 'Participated in my first Datathon hosted by Tecnologico de Monterrey\'s Data Science Club. Our team took on Hey Banco\'s challenge to create a costumer support dashboard that would help them improve their response time and overall service quality. It was an enlightening and enjoyable journey, revealing areas for improvement.',
-    links: [
-
-      { name: 'LinkedIn Post', logo: '/Logos/link2-logo.png', url: 'https://linkedin.com/in/example' },
-      { name: 'Github Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/Tect0r0/dsc2024' },
-    ],
-    project: 'Hey Banco - Costumer Support Dashboard'
-  },
-  {
-    image: 'Hacks/TheMartIAns.jpeg',
-    title: 'LinceHacks',
-    date: 'MAY 2024',
-    team: 'The MartIAns 👽',
-    description: 'Participated in another exciting hackathon hosted by Universidad del Norte. Our team worked on a platform with interactive maps, where users can obtain a prediction with 90% accuracy regarding upcoming electrical consumption in the region. This tool is essential for efficient energy consumption planning and management, benefiting both authorities and citizens.',
-    links: [
-      { name: 'Devpost', logo: '/Logos/Devpost.png', url: 'https://devpost.com/software/olli-app' },
-       { name: 'Github Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/santiagosauma/OLLI-APP' },
-  
-    ], project: 'OLLI App'
-  }, {
-    image: '/Hacks/HackMTY2023.jpeg',
-    title: 'HackMTY  ',
-    date: 'SEP 2023',
-    team: 'Code Monkeys 🐵',
-    description: 'Participated in my first Hackathon. HackMTY is the largest hackathon in Mexico, hosted by Tec de Monterrey. Our team developed OptiFood, with OptiFood, users can register their pantry, and with a system powered by Artificial Inteligence, they can generate recipes giving priority to those that use their soon-to-expire foods, while also reminding them of set dates in order to avoid food waste. We even ended in the top 10 out of 130 teams!',
-    links: [
-    
-      { name: 'Devpost', logo: '/Logos/Devpost.png', url: 'https://devpost.com/software/optifood' },
-      { name: 'Github Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/JesusRam04/Hackathon2023' },
- 
-    ]
-  },
-  {
-    image: 'Hacks/Atrato.jpeg',
-    title: 'Atrato Hack',
-    date: 'FEB 2024',
-    team: 'Codezilla 🦖',
-    description: 'Participated in another exciting hackathon hosted by Atrato. Our team worked on a chatbot, designed to answer finance-related questions, maintaining a professional and supportive profile for Atrato. It was a great opportunity to learn about the financial sector and chatbot development.',
-    links: [
-      { name: 'GitHub Repo', logo: '/Logos/github-logo.png', url: 'https://github.com/davidballezaa/bamboo'}],
-    project: 'Bamboo'
-  }
-];
 
 const CompetitionSlider = () => {
   const settings = {
@@ -86,14 +37,21 @@ const CompetitionSlider = () => {
   };
 
   return (
-    <section>
-      <Slider {...settings} className="relative">
-        {competitions.map((competition, index) => (
-          <div key={index} className="p-2.5">
-            <CompetitionCard {...competition} />
-          </div>
-        ))}
-      </Slider>
+    <section className="w-full h-full flex items-center justify-center py-4 px-4">
+      <style jsx>{`
+        section :global(.slick-list) {
+          padding: 30px 0 !important;
+        }
+      `}</style>
+      <div className="w-full max-w-[1400px]">
+        <Slider {...settings} className="relative">
+          {competitionsData.map((competition) => (
+            <div key={competition.id} className="px-6">
+              <CompetitionCard {...competition} />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </section>
   );
 };
