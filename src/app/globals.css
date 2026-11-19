@@ -1,45 +1,184 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-body {
-  background-color: #000319;
-  margin: 0;
-  padding: 0;
-}
+/* Design tokens — Tailwind v4 reads these and generates utilities
+   (bg-space, text-lavender, font-display, etc.). No tailwind.config.js needed. */
+@theme {
+  --color-space: #050719;
+  --color-deep: #0d0f29;
+  --color-deep-2: #14163a;
+  --color-line: #23264a;
+  --color-lavender: #cbacf9;
+  --color-lavender-dim: #9b7fd1;
+  --color-haze: #a9abcb;
+  --color-star: #f1effa;
 
-html {
-  scroll-behavior: smooth;
-}
+  --font-sans: "Sora Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Audiowide", ui-sans-serif, system-ui, sans-serif;
 
-@layer utilities {
-  .line-clamp-2 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+  --animate-orbit: orbit 60s linear infinite;
+  --animate-orbit-reverse: orbit 60s linear infinite reverse;
+  --animate-modal-in: modal-in 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg);
+    }
   }
 
-  .line-clamp-3 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-  }
+  --animate-rise: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-pop: pop 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-panel: panel 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 
-  @keyframes fadeIn {
+  @keyframes rise {
     from {
       opacity: 0;
-      transform: translateY(-10px);
+      transform: translateY(16px);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
     }
   }
 
-  .animate-fadeIn {
-    animation: fadeIn 0.3s ease-in-out;
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: scale(0.6) rotate(-20deg);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes panel {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-space text-star font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-lavender text-space;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-lavender;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Scroll reveal (see components/ui/Reveal.jsx).
+   Elements start offset and transparent, then settle when data-shown is set. */
+@layer components {
+  .reveal {
+    transition:
+      opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal:not([data-shown]) {
+    opacity: 0;
+  }
+  .reveal[data-reveal="up"]:not([data-shown]) {
+    transform: translateY(20px);
+  }
+  .reveal[data-reveal="left"]:not([data-shown]) {
+    transform: translateX(-32px);
+  }
+  .reveal[data-reveal="right"]:not([data-shown]) {
+    transform: translateX(32px);
+  }
+  .reveal[data-reveal="scale"]:not([data-shown]) {
+    transform: scale(0.94);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal:not([data-shown]) {
+      opacity: 1;
+      transform: none !important;
+    }
+  }
+
+  /* Light sweep across an image on hover, used on project and hackathon cards */
+  .shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .shine::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 40%;
+    background: linear-gradient(to right, transparent, rgb(255 255 255 / 0.14), transparent);
+    transform: translateX(-120%) skewX(-20deg);
+    pointer-events: none;
+  }
+  .group:hover .shine::after {
+    transform: translateX(320%) skewX(-20deg);
+    transition: transform 0.9s ease;
+  }
+}
+
+/* Faint starfield. Three tile sizes that don't divide evenly into each other,
+   so the stars never line up into a visible grid. */
+@utility starfield {
+  background-image:
+    radial-gradient(1px 1px at 23px 41px, rgb(255 255 255 / 0.7), transparent),
+    radial-gradient(1px 1px at 151px 97px, rgb(255 255 255 / 0.45), transparent),
+    radial-gradient(1.5px 1.5px at 89px 173px, rgb(255 255 255 / 0.6), transparent),
+    radial-gradient(1px 1px at 47px 19px, rgb(255 255 255 / 0.5), transparent),
+    radial-gradient(1px 1px at 211px 131px, rgb(255 255 255 / 0.35), transparent),
+    radial-gradient(1.5px 1.5px at 307px 61px, rgb(255 255 255 / 0.55), transparent);
+  background-size: 233px 211px, 233px 211px, 233px 211px, 347px 293px, 347px 293px, 419px 383px;
+}
