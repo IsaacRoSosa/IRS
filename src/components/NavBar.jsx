@@ -1,29 +1,90 @@
-import React from 'react'
+"use client";
+import { useEffect, useState } from "react";
+import { CloseIcon, MenuIcon } from "./ui/Icons";
 
-const navBar = () => {
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#hackathons", label: "Hackathons" },
+  { href: "#contact", label: "Contact" },
+];
+
+export default function NavBar() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close the mobile menu with Escape or when switching to a wide screen.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    const mq = window.matchMedia("(min-width: 768px)");
+    const onMq = () => mq.matches && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    mq.addEventListener("change", onMq);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      mq.removeEventListener("change", onMq);
+    };
+  }, [open]);
+
+  const solid = scrolled || open;
+
   return (
-    <div className="w-full h-[9vh] min-h-fit flex items-center bg-gradient-to-r from-[#04071D] to-[#2b1645] fixed top-0 z-50">
-        <div className="w-1/5 h-full flex items-center">
-          <a href="#home" className="ml-[25%] max-sm:ml-[15%]">
-            <h1 className="text-[#CBACF9] text-[2.5em] m-0 max-sm:text-[2em]" style={{fontFamily: 'Audiowide, sans-serif'}}>
-              IRS
-            </h1>
-          </a>
-        </div>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        solid ? "border-b border-line/70 bg-space/85 backdrop-blur-md" : "border-b border-transparent"
+      }`}
+    >
+      <nav aria-label="Main" className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+        <a href="#top" className="font-display text-2xl text-lavender" aria-label="Isaac Rojas, back to top">
+          IRS
+        </a>
 
-        <div className="w-4/5 h-full flex justify-end items-center pr-[5%] gap-[5%] max-md:gap-[3%] max-sm:gap-[2%]">
-          <a href='#AboutMe' className="text-[#C1C2D3] text-[1.3em] no-underline hover:text-[#CDB8EC] hover:cursor-pointer max-md:text-[1em] max-sm:text-[0.8em]" style={{fontFamily: 'Audiowide, sans-serif'}}>
-            About
-          </a>
-          <a href='#Experience' className="text-[#C1C2D3] text-[1.3em] no-underline hover:text-[#CDB8EC] hover:cursor-pointer max-md:text-[1em] max-sm:text-[0.8em]" style={{fontFamily: 'Audiowide, sans-serif'}}>
-            Experience
-          </a>
-          <a href='#Projects' className="text-[#C1C2D3] text-[1.3em] no-underline hover:text-[#CDB8EC] hover:cursor-pointer max-md:text-[1em] max-sm:text-[0.8em]" style={{fontFamily: 'Audiowide, sans-serif'}}>
-            Projects
-          </a>
-        </div>
-    </div>
-  )
+        <ul className="hidden items-center gap-8 md:flex">
+          {links.map((l) => (
+            <li key={l.href}>
+              <a href={l.href} className="text-sm text-haze transition-colors hover:text-star">
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          type="button"
+          className="grid size-10 place-items-center rounded-full text-star md:hidden"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((o) => !o)}
+        >
+          {open ? <CloseIcon /> : <MenuIcon />}
+        </button>
+      </nav>
+
+      <div id="mobile-menu" hidden={!open} className="border-t border-line/70 md:hidden">
+        <ul className="mx-auto flex max-w-6xl flex-col px-5 py-3">
+          {links.map((l) => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block rounded-lg px-2 py-3 text-lg text-star transition-colors hover:bg-deep-2"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </header>
+  );
 }
-
-export default navBar
