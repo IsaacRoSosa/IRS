@@ -1,0 +1,77 @@
+[
+  {
+    "id": "oracle",
+    "company": "Oracle",
+    "role": "Incoming Software Engineer Intern",
+    "period": "Jul 2025",
+    "summary": "Joining the Oracle Hospitality team as a software engineering intern.",
+    "highlights": [],
+    "logo": "/Logos/Companies/Oracle.png",
+    "url": "https://www.linkedin.com/company/oracle/",
+    "stack": [
+      { "name": "Java" },
+      { "name": "SQL", "logo": "/Logos/Tools/postgresql.png" },
+      { "name": "Git", "logo": "/Logos/Tools/git.png" }
+    ]
+  },
+  {
+    "id": "softpital",
+    "company": "Softpital",
+    "role": "Full Stack Developer",
+    "period": "Feb 2025 – Present",
+    "summary": "Softpital is a startup that builds software for managing and maintaining medical equipment. Its platform centralizes real-time monitoring and maintenance so hospitals can keep their equipment running.",
+    "highlights": [
+      "Build and improve front-end features to make the platform easier to use.",
+      "Find and fix bugs during early development.",
+      "Optimize backend operations to improve overall performance."
+    ],
+    "logo": "/Logos/Companies/softpital.png",
+    "url": "https://www.linkedin.com/company/softpitalcmms/",
+    "stack": [
+      { "name": "Next.js", "logo": "/Logos/Tools/nextjs.png" },
+      { "name": "TypeScript", "logo": "/Logos/Languages/typescript.png" },
+      { "name": "Supabase", "logo": "/Logos/Tools/supabase.png" },
+      { "name": "Tailwind CSS", "logo": "/Logos/Tools/tailwind.png" },
+      { "name": "PostgreSQL", "logo": "/Logos/Tools/postgresql.png" }
+    ]
+  },
+  {
+    "id": "didi",
+    "company": "DiDi",
+    "role": "Operations Intern",
+    "period": "Jul 2024 – Jan 2025",
+    "summary": "Growth team at DiDi Food. I built data tools that automated promotion workflows and helped bring in new customers in Peru and Colombia.",
+    "highlights": [
+      "Automated promotion and campaign generation for DiDi Peru in Python, handling business rules that changed every week.",
+      "Pulled live data from Google Sheets and processed it with pandas to generate dish lists with targeted discounts.",
+      "Increased ad engagement by 20% with data-driven promotions, and documented the tool so other countries could adopt it."
+    ],
+    "logo": "/Logos/Companies/Didi-logo.png",
+    "url": "https://www.linkedin.com/company/didiglobal/",
+    "stack": [
+      { "name": "Python", "logo": "/Logos/Languages/python.png" },
+      { "name": "JavaScript", "logo": "/Logos/Languages/javascript.png" },
+      { "name": "Git", "logo": "/Logos/Tools/git.png" }
+    ]
+  },
+  {
+    "id": "tec",
+    "company": "Tecnológico de Monterrey",
+    "role": "Full Stack Developer",
+    "period": "Feb 2024 – Present",
+    "summary": "Control Tower team, which oversees entrepreneurship events across Tec's 26 campuses. I maintain and improve the databases behind those programs.",
+    "highlights": [
+      "Wrote a Python script that automates data cleaning and SQL insertion, cutting weekly processing time by 95%.",
+      "Improved the accuracy of event data across 26 campuses so the team can make decisions on reliable numbers."
+    ],
+    "logo": "/Logos/Companies/Tec.svg",
+    "url": "https://www.linkedin.com/school/tecdemonterrey/",
+    "stack": [
+      { "name": "Python", "logo": "/Logos/Languages/python.png" },
+      { "name": "Flask", "logo": "/Logos/Flask-logo.png" },
+      { "name": "MySQL", "logo": "/Logos/Tools/mySql.png" },
+      { "name": "React", "logo": "/Logos/Tools/react.png" },
+      { "name": "Unity", "logo": "/Logos/Unity-logo.png" }
+    ]
+  }
+]
