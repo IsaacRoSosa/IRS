@@ -11,7 +11,7 @@ export default function HackathonCard({ hack, index = 0 }) {
 
   return (
     <Reveal as="li" from={index % 2 === 0 ? "left" : "right"} delay={(index % 2) * 80} className="h-full">
-      <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-deep transition-colors hover:border-lavender/60 sm:flex-row">
+      <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-paper-raised transition-colors hover:border-line-strong hover:shadow-lift sm:flex-row">
         <div className="shine relative aspect-[16/10] w-full shrink-0 overflow-hidden sm:aspect-auto sm:w-2/5">
           <Image
             src={image}
@@ -22,10 +22,10 @@ export default function HackathonCard({ hack, index = 0 }) {
           />
         </div>
         <div className="flex flex-1 flex-col p-5">
-          <p className="text-sm text-haze">
+          <p className="text-sm text-ink-soft">
             {event}, <time>{date}</time>
           </p>
-          <h3 className="mt-1 text-lg font-semibold text-star">
+          <h3 className="mt-1 text-lg font-semibold text-ink">
             <button
               type="button"
               onClick={() => setOpen(true)}
@@ -35,12 +35,12 @@ export default function HackathonCard({ hack, index = 0 }) {
             </button>
           </h3>
           {result && (
-            <p className="mt-2 w-fit rounded-full bg-lavender/15 px-2.5 py-0.5 text-xs font-medium text-lavender">
+            <p className="mt-2 w-fit rounded-full bg-vermilion/20 px-2.5 py-0.5 text-xs font-medium text-rust">
               {result}
             </p>
           )}
-          <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-haze">{summary}</p>
-          <span className="mt-auto pt-4 text-sm font-medium text-lavender">Read more</span>
+          <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-ink-soft">{summary}</p>
+          <span className="mt-auto pt-4 text-sm font-medium text-rust">Read more</span>
         </div>
       </article>
 
@@ -49,16 +49,16 @@ export default function HackathonCard({ hack, index = 0 }) {
           <Image src={image} alt={`Team ${team} at ${event}`} fill sizes="(min-width: 768px) 768px, 100vw" className="object-cover" />
         </div>
         <div className="p-6 sm:p-8">
-          <p className="text-sm text-haze">
+          <p className="text-sm text-ink-soft">
             Team {team} at {event}, {date}
           </p>
           <h3 id={`${id}-modal-title`} className="mt-1 text-2xl font-semibold sm:text-3xl">
             {project}
           </h3>
           {result && (
-            <p className="mt-3 w-fit rounded-full bg-lavender/15 px-3 py-1 text-sm font-medium text-lavender">{result}</p>
+            <p className="mt-3 w-fit rounded-full bg-vermilion/20 px-3 py-1 text-sm font-medium text-rust">{result}</p>
           )}
-          <div className="mt-4 space-y-4 leading-relaxed text-haze">
+          <div className="mt-4 space-y-4 leading-relaxed text-ink-soft">
             {details.map((p) => (
               <p key={p}>{p}</p>
             ))}

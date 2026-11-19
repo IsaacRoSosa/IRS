@@ -45,8 +45,8 @@ export default function ExperienceTabs({ items }) {
               style={{ animationDelay: `${80 + i * 60}ms` }}
               className={`in-data-shown:animate-[slide-in_0.45s_cubic-bezier(0.2,0.8,0.2,1)_both] shrink-0 snap-start rounded-full border px-4 py-2 text-left text-sm whitespace-nowrap transition-colors md:-ml-px md:rounded-none md:border-0 md:border-l-2 md:px-5 md:py-3 md:text-base ${
                 selected
-                  ? "border-lavender bg-lavender/10 text-star"
-                  : "border-line text-haze hover:text-star md:border-transparent md:hover:bg-deep"
+                  ? "border-rust bg-vermilion/20 text-ink"
+                  : "border-line text-ink-soft hover:text-ink md:border-transparent md:hover:bg-paper-raised"
               }`}
             >
               {item.company}
@@ -60,35 +60,35 @@ export default function ExperienceTabs({ items }) {
         id={`panel-${job.id}`}
         role="tabpanel"
         aria-labelledby={`tab-${job.id}`}
-        className="animate-panel rounded-2xl md:min-h-[22rem] border border-line bg-deep p-6 sm:p-8"
+        className="animate-panel rounded-2xl md:min-h-[22rem] border border-line bg-paper-raised p-6 sm:p-8"
       >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex items-center gap-4">
-            <div className="grid size-14 shrink-0 place-items-center rounded-xl bg-white p-2 sm:size-16">
+            <div className="grid size-14 shrink-0 place-items-center rounded-xl border border-line bg-white p-2 sm:size-16">
               <Image src={job.logo} alt="" width={48} height={48} className="size-full object-contain" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-star sm:text-2xl">{job.role}</h3>
+              <h3 className="text-xl font-semibold text-ink sm:text-2xl">{job.role}</h3>
               <a
                 href={job.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-haze underline decoration-line underline-offset-4 transition-colors hover:text-lavender hover:decoration-lavender"
+                className="text-ink-soft underline decoration-line underline-offset-4 transition-colors hover:text-rust hover:decoration-rust"
               >
                 {job.company}
               </a>
             </div>
           </div>
-          <p className="shrink-0 text-sm text-lavender sm:pt-1.5">{job.period}</p>
+          <p className="shrink-0 text-sm text-rust sm:pt-1.5">{job.period}</p>
         </div>
 
-        <p className="mt-6 max-w-[65ch] leading-relaxed text-star/85">{job.summary}</p>
+        <p className="mt-6 max-w-[65ch] leading-relaxed text-ink/85">{job.summary}</p>
 
         {job.highlights.length > 0 && (
           <ul className="mt-5 max-w-[65ch] space-y-3">
             {job.highlights.map((h) => (
-              <li key={h} className="relative pl-5 leading-relaxed text-haze">
-                <span aria-hidden="true" className="absolute top-2.5 left-0 size-1.5 rounded-full bg-lavender" />
+              <li key={h} className="relative pl-5 leading-relaxed text-ink-soft">
+                <span aria-hidden="true" className="absolute top-2.5 left-0 size-1.5 rounded-full bg-vermilion" />
                 {h}
               </li>
             ))}

@@ -10,7 +10,7 @@ export default function Gallery({ images, title }) {
   const go = (step) => setIndex((i) => (i + step + count) % count);
 
   return (
-    <div className="relative aspect-video w-full bg-space">
+    <div className="relative aspect-video w-full bg-paper">
       <Image
         key={images[index]}
         src={images[index]}
@@ -26,7 +26,7 @@ export default function Gallery({ images, title }) {
             type="button"
             onClick={() => go(-1)}
             aria-label="Previous screenshot"
-            className="absolute top-1/2 left-3 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-white/20 bg-space/70 backdrop-blur transition-colors hover:bg-space"
+            className="absolute top-1/2 left-3 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-paper/70 backdrop-blur transition-colors hover:bg-paper"
           >
             <ChevronIcon direction="left" />
           </button>
@@ -34,11 +34,11 @@ export default function Gallery({ images, title }) {
             type="button"
             onClick={() => go(1)}
             aria-label="Next screenshot"
-            className="absolute top-1/2 right-3 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-white/20 bg-space/70 backdrop-blur transition-colors hover:bg-space"
+            className="absolute top-1/2 right-3 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-paper/70 backdrop-blur transition-colors hover:bg-paper"
           >
             <ChevronIcon />
           </button>
-          <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2 rounded-full bg-space/60 px-3 py-2 backdrop-blur">
+          <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2 rounded-full bg-paper/60 px-3 py-2 backdrop-blur">
             {images.map((src, i) => (
               <button
                 key={src}
@@ -46,7 +46,7 @@ export default function Gallery({ images, title }) {
                 onClick={() => setIndex(i)}
                 aria-label={`Show screenshot ${i + 1}`}
                 aria-current={i === index}
-                className={`h-2 rounded-full transition-all ${i === index ? "w-6 bg-lavender" : "w-2 bg-white/40 hover:bg-white/70"}`}
+                className={`h-2 rounded-full transition-all ${i === index ? "w-6 bg-vermilion" : "w-2 bg-ink/25 hover:bg-ink/50"}`}
               />
             ))}
           </div>

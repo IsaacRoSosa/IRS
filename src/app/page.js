@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:bg-lavender focus:px-4 focus:py-2 focus:text-space"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
       >
         Skip to content
       </a>
@@ -19,9 +19,13 @@ export default function Home() {
       <main id="main" className="relative overflow-x-clip">
         <HeroSection />
         <AboutSection />
-        <ExperienceSection />
+        <div className="bg-linear-to-b from-transparent via-paper-sunk to-transparent">
+          <ExperienceSection />
+        </div>
         <ProjectsSection />
-        <HackathonsSection />
+        <div className="bg-linear-to-b from-transparent via-paper-sunk to-transparent">
+          <HackathonsSection />
+        </div>
         <ContactSection />
       </main>
     </>

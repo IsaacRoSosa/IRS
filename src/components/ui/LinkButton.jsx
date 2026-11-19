@@ -5,8 +5,8 @@ export default function LinkButton({ label, url, type, variant = "ghost" }) {
   const Icon = linkIcon[type] ?? ExternalIcon;
   const styles =
     variant === "solid"
-      ? "bg-lavender text-space hover:bg-white"
-      : "border border-line text-star hover:border-lavender hover:text-lavender";
+      ? "bg-ink text-paper hover:bg-vermilion hover:text-on-wash"
+      : "border border-line text-ink hover:border-rust hover:text-rust";
   return (
     <a
       href={url}

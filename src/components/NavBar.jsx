@@ -40,18 +40,18 @@ export default function NavBar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        solid ? "border-b border-line/70 bg-space/85 backdrop-blur-md" : "border-b border-transparent"
+        solid ? "border-b border-line/70 bg-paper/85 backdrop-blur-md" : "border-b border-transparent"
       }`}
     >
       <nav aria-label="Main" className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="font-display text-2xl text-lavender" aria-label="Isaac Rojas, back to top">
+        <a href="#top" className="font-display text-2xl text-rust" aria-label="Isaac Rojas, back to top">
           IRS
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="text-sm text-haze transition-colors hover:text-star">
+              <a href={l.href} className="text-sm text-ink-soft transition-colors hover:text-ink">
                 {l.label}
               </a>
             </li>
@@ -60,7 +60,7 @@ export default function NavBar() {
 
         <button
           type="button"
-          className="grid size-10 place-items-center rounded-full text-star md:hidden"
+          className="grid size-10 place-items-center rounded-full text-ink md:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -77,7 +77,7 @@ export default function NavBar() {
               <a
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-2 py-3 text-lg text-star transition-colors hover:bg-deep-2"
+                className="block rounded-lg px-2 py-3 text-lg text-ink transition-colors hover:bg-paper-sunk"
               >
                 {l.label}
               </a>

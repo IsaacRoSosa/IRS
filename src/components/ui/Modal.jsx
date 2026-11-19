@@ -30,13 +30,13 @@ export default function Modal({ open, onClose, labelledBy, children }) {
         // Clicking the dimmed backdrop (the dialog itself, not its content) closes it.
         if (e.target === ref.current) onClose();
       }}
-      className="m-auto max-h-[92dvh] w-[calc(100%-1.5rem)] max-w-3xl overflow-hidden rounded-2xl border border-line bg-deep p-0 text-star shadow-[0_0_80px_-20px_var(--color-lavender)] backdrop:bg-space/80 backdrop:backdrop-blur-sm open:animate-modal-in"
+      className="m-auto max-h-[92dvh] w-[calc(100%-1.5rem)] max-w-3xl overflow-hidden rounded-2xl border border-line bg-paper-raised p-0 text-ink shadow-lift backdrop:bg-paper/80 backdrop:backdrop-blur-sm open:animate-modal-in"
     >
       <button
         type="button"
         onClick={onClose}
         aria-label="Close"
-        className="absolute top-3 right-3 z-20 grid size-10 place-items-center rounded-full border border-white/15 bg-space/70 text-star backdrop-blur transition-colors hover:bg-space"
+        className="absolute top-3 right-3 z-20 grid size-10 place-items-center rounded-full border border-line bg-paper/70 text-ink backdrop-blur transition-colors hover:bg-paper"
       >
         <CloseIcon />
       </button>

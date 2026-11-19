@@ -1,6 +1,8 @@
 import { Analytics } from "@vercel/analytics/next";
-import "@fontsource-variable/sora";
-import "@fontsource/audiowide";
+import "@fontsource-variable/fraunces";
+import "@fontsource/zen-kaku-gothic-new/400.css";
+import "@fontsource/zen-kaku-gothic-new/500.css";
+import "@fontsource/zen-kaku-gothic-new/700.css";
 import "./globals.css";
 
 const siteUrl = "https://isaacrs-portafolio.vercel.app";
@@ -22,7 +24,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#050719",
+  themeColor: "#1a1c15",
 };
 
 export default function RootLayout({ children }) {
