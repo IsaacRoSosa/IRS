@@ -12,12 +12,26 @@ export default function ProjectCard({ project, index }) {
   const [open, setOpen] = useState(false);
   const { id, title, status, summary, details, image, mark, gallery, stack, links } = project;
   const preview = stack.slice(0, 4);
+  // Deployed projects get a "Try it out" tag that links straight to the live product.
+  const live = links.find((l) => l.type === "website");
   const extra = stack.length - preview.length;
 
   return (
     <Reveal as="li" delay={(index % 3) * 80} className="h-full">
       <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-paper-raised transition-colors hover:border-line-strong hover:shadow-lift">
         <WashWindow src={image} mark={mark} alt="" index={index} interactive />
+        {live && (
+          <a
+            href={live.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Try ${title} (opens in a new tab)`}
+            className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-ink px-3 py-1 text-xs font-semibold text-paper shadow-lift transition-colors hover:bg-vermilion hover:text-on-wash"
+          >
+            <span aria-hidden="true" className="size-1.5 rounded-full bg-moss" />
+            Try it out
+          </a>
+        )}
 
         <div className="flex flex-1 flex-col p-5 sm:p-6">
           <div className="flex items-start justify-between gap-3">
