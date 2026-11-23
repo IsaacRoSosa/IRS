@@ -126,6 +126,49 @@
     ]
   },
   {
+    "id": "noleetnoscroll",
+    "title": "No Leet No Scroll",
+    "summary": "A Chrome extension that keeps your social media locked until you've done your LeetCode for the day.",
+    "details": [
+      "The deal is simple: practice first, scroll later.",
+      "You choose the sites that distract you and set a daily goal of easy, medium and hard problems. Until you solve them, those sites show a \"Nuh uh!\" page with what you still owe. Once you're done, they open again.",
+      "It keeps a daily streak and gives you a couple of emergency passes a month for the days you really need them."
+    ],
+    "image": "/Projects/NoLeetNoScroll/character.png",
+    "mark": "noleetnoscroll",
+    "gallery": [
+      "/Projects/NoLeetNoScroll/promo.png",
+      "/Projects/NoLeetNoScroll/blocked.png",
+      "/Projects/NoLeetNoScroll/today.png",
+      "/Projects/NoLeetNoScroll/goals.png",
+      "/Projects/NoLeetNoScroll/unlocked.png"
+    ],
+    "stack": [
+      {
+        "name": "JavaScript",
+        "logo": "/Logos/Languages/javascript.png"
+      },
+      {
+        "name": "HTML",
+        "logo": "/Logos/Tools/html.png"
+      },
+      {
+        "name": "CSS",
+        "logo": "/Logos/Tools/css.png"
+      },
+      {
+        "name": "Chrome Extensions API"
+      }
+    ],
+    "links": [
+      {
+        "label": "Add to Chrome",
+        "url": "https://chromewebstore.google.com/detail/ookieeibmnnbmainnfjjgepekoeffmdm",
+        "type": "website"
+      }
+    ]
+  },
+  {
     "id": "papalote",
     "title": "Papalote Museum App",
     "summary": "An iOS app for Papalote Museo del Niño with a 3D map and an AR scavenger hunt. Chosen as the best of six team projects.",
@@ -260,44 +303,5 @@
         "type": "video"
       }
     ]
-  },
-  {
-    "id": "maseria",
-    "title": "Maseria",
-    "status": "In development",
-    "summary": "A mobile and web app that helps small bakeries manage inventory and sales.",
-    "details": [
-      "Bakery staff update stock and record sales from the iOS app, while owners use the web dashboard to see how the business is doing.",
-      "Sales tracking and analytics help owners decide what to bake and when."
-    ],
-    "image": "/Projects/PanApp.png",
-    "gallery": [],
-    "stack": [
-      {
-        "name": "Swift",
-        "logo": "/Logos/Languages/swift.png"
-      },
-      {
-        "name": "Next.js",
-        "logo": "/Logos/Tools/nextjs.png"
-      },
-      {
-        "name": "TypeScript",
-        "logo": "/Logos/Languages/typescript.png"
-      },
-      {
-        "name": "Supabase",
-        "logo": "/Logos/Tools/supabase.png"
-      },
-      {
-        "name": "Tailwind CSS",
-        "logo": "/Logos/Tools/tailwind.png"
-      },
-      {
-        "name": "Vercel",
-        "logo": "/Logos/Tools/Vercel.png"
-      }
-    ],
-    "links": []
   }
 ]
