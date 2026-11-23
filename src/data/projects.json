@@ -58,15 +58,20 @@
   },
   {
     "id": "crosstalk",
-    "title": "CrossTalk",
-    "summary": "A 3D music visualizer that reads your Spotify playlists and builds a personality profile from your taste.",
+    "title": "Crosstalk",
+    "summary": "Get to know someone through the songs they keep playing. Crosstalk reads the lyrics and turns them into a 3D nucleus and a first impression.",
     "details": [
-      "CrossTalk turns a Spotify playlist into an interactive 3D orbital system. Songs become nodes placed by their intensity, and Google Gemini analyzes lyrics and mood to describe the listener.",
-      "At the center sits an AI chat grounded in the playlist, so you can ask about your listening habits and get personal insights."
+      "The idea is simple: the songs someone keeps coming back to say a lot about them, sometimes more than a first conversation. Crosstalk turns that into a first impression you can actually see.",
+      "Bring in songs from Spotify, Apple Music or Deezer. Each one is read through its lyrics for mood and meaning, then placed in orbit around a 3D nucleus with its album art.",
+      "From there, Crosstalk writes a few lines about the person behind the music and gives the collection a name. You can play the songs, ask the nucleus about them, and share it with a link so someone else can explore it too."
     ],
-    "image": "/Projects/CrossTalk.png",
+    "image": "/Projects/CrossTalk/icon.png",
+    "mark": "crosstalk",
     "gallery": [
-      "/Projects/CrossTalk/CrossTalk.png"
+      "/Projects/CrossTalk/og.png",
+      "/Projects/CrossTalk/landing.jpg",
+      "/Projects/CrossTalk/example.jpg",
+      "/Projects/CrossTalk/nucleus.jpg"
     ],
     "stack": [
       {
@@ -82,29 +87,40 @@
         "logo": "/Logos/Tools/threejs.png"
       },
       {
+        "name": "Supabase",
+        "logo": "/Logos/Tools/supabase.png"
+      },
+      {
+        "name": "TanStack Start"
+      },
+      {
+        "name": "OpenRouter"
+      },
+      {
         "name": "Spotify API",
         "logo": "/Logos/Tools/spotify.png"
       },
       {
-        "name": "Gemini",
-        "logo": "/Logos/Tools/gemini.png"
-      },
-      {
-        "name": "SQLite",
-        "logo": "/Logos/Tools/sqlite.png"
-      },
-      {
-        "name": "TanStack Router"
+        "name": "Apple Music API"
       },
       {
         "name": "Tailwind CSS",
         "logo": "/Logos/Tools/tailwind.png"
+      },
+      {
+        "name": "Vercel",
+        "logo": "/Logos/Tools/Vercel.png"
       }
     ],
     "links": [
       {
+        "label": "Try it live",
+        "url": "https://crosstalkfm.vercel.app",
+        "type": "website"
+      },
+      {
         "label": "View code",
-        "url": "https://github.com/ramiro-uziel/crosstalk",
+        "url": "https://github.com/IsaacRoSosa/crosstalk",
         "type": "github"
       }
     ]

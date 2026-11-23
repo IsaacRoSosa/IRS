@@ -10,14 +10,14 @@ import Reveal from "./ui/Reveal";
 
 export default function ProjectCard({ project, index }) {
   const [open, setOpen] = useState(false);
-  const { id, title, status, summary, details, image, gallery, stack, links } = project;
+  const { id, title, status, summary, details, image, mark, gallery, stack, links } = project;
   const preview = stack.slice(0, 4);
   const extra = stack.length - preview.length;
 
   return (
     <Reveal as="li" delay={(index % 3) * 80} className="h-full">
       <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-paper-raised transition-colors hover:border-line-strong hover:shadow-lift">
-        <WashWindow src={image} alt="" index={index} interactive />
+        <WashWindow src={image} mark={mark} alt="" index={index} interactive />
 
         <div className="flex flex-1 flex-col p-5 sm:p-6">
           <div className="flex items-start justify-between gap-3">
@@ -68,7 +68,7 @@ export default function ProjectCard({ project, index }) {
         {gallery.length > 0 ? (
           <Gallery images={gallery} title={title} />
         ) : (
-          <WashWindow src={image} alt={`${title} icon`} index={index} large />
+          <WashWindow src={image} mark={mark} alt={`${title} icon`} index={index} large />
         )}
         <div className="p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-3">

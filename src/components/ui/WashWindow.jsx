@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { marks } from "../marks";
 
 // Each card gets a different arrangement of washes: [shape class, color class, position/size classes].
 // Shapes are organic blobs, half and quarter discs, like the Nujabes sleeves. Picked by project index.
@@ -33,7 +34,8 @@ const compositions = [
 
 // The project card artwork: the app icon resting on a small patch of watercolor,
 // with a wash arrangement chosen from the project index (stable across renders).
-export default function WashWindow({ src, alt, index = 0, large = false, interactive = false }) {
+export default function WashWindow({ src, alt, mark, index = 0, large = false, interactive = false }) {
+  const Mark = mark ? marks[mark] : null;
   const shapes = compositions[index % compositions.length];
   return (
     <div className={`${interactive ? "shine" : ""} relative grid aspect-[16/10] w-full place-items-center overflow-hidden bg-paper-sunk`}>
@@ -51,7 +53,11 @@ export default function WashWindow({ src, alt, index = 0, large = false, interac
           interactive ? "scale-90 group-hover:scale-100 group-hover:-rotate-3" : ""
         }`}
       >
-        <Image src={src} alt={alt} fill sizes={large ? "192px" : "128px"} className="object-contain drop-shadow-[0_8px_16px_rgba(38,38,29,0.25)]" />
+        {Mark ? (
+          <Mark className="size-full drop-shadow-[0_8px_16px_rgba(38,38,29,0.35)]" label={alt || null} />
+        ) : (
+          <Image src={src} alt={alt} fill sizes={large ? "192px" : "128px"} className="object-contain drop-shadow-[0_8px_16px_rgba(38,38,29,0.25)]" />
+        )}
       </div>
     </div>
   );
