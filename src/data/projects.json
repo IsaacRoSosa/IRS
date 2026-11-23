@@ -1,0 +1,308 @@
+[
+  {
+    "id": "jobhill",
+    "title": "JobHill",
+    "summary": "A job board that collects the latest tech internships and new-grad roles for Tec de Monterrey students.",
+    "details": [
+      "JobHill gathers internship and entry-level openings in one place, with filters for location, company and job type. More than 50 students use it to manage their search.",
+      "A company view groups every open role at a given employer, and a personal dashboard lets students save postings and track the status of each application.",
+      "Scrapers run on GitHub Actions to fetch new offers every 6 hours and re-check old ones every 12. Supabase handles authentication and keeps data in sync across devices."
+    ],
+    "image": "/Projects/JobHill.png",
+    "mark": "jobhill",
+    "gallery": [
+      "/Projects/JobHill/home.jpg",
+      "/Projects/JobHill/jobs.jpg",
+      "/Projects/JobHill/companies.jpg",
+      "/Projects/JobHill/applications.jpg"
+    ],
+    "stack": [
+      {
+        "name": "Next.js",
+        "logo": "/Logos/Tools/nextjs.png"
+      },
+      {
+        "name": "TypeScript",
+        "logo": "/Logos/Languages/typescript.png"
+      },
+      {
+        "name": "Python",
+        "logo": "/Logos/Languages/python.png"
+      },
+      {
+        "name": "Supabase",
+        "logo": "/Logos/Tools/supabase.png"
+      },
+      {
+        "name": "PostgreSQL",
+        "logo": "/Logos/Tools/postgresql.png"
+      },
+      {
+        "name": "Tailwind CSS",
+        "logo": "/Logos/Tools/tailwind.png"
+      },
+      {
+        "name": "TanStack Query"
+      },
+      {
+        "name": "Vercel",
+        "logo": "/Logos/Tools/Vercel.png"
+      }
+    ],
+    "links": [
+      {
+        "label": "Visit website",
+        "url": "https://www.jobhill.xyz/",
+        "type": "website"
+      }
+    ]
+  },
+  {
+    "id": "crosstalk",
+    "title": "Crosstalk",
+    "summary": "Get to know someone through the songs they keep playing. Crosstalk reads the lyrics and turns them into a 3D nucleus and a first impression.",
+    "details": [
+      "The idea is simple: the songs someone keeps coming back to say a lot about them, sometimes more than a first conversation. Crosstalk turns that into a first impression you can actually see.",
+      "Bring in songs from Spotify, Apple Music or Deezer. Each one is read through its lyrics for mood and meaning, then placed in orbit around a 3D nucleus with its album art.",
+      "From there, Crosstalk writes a few lines about the person behind the music and gives the collection a name. You can play the songs, ask the nucleus about them, and share it with a link so someone else can explore it too."
+    ],
+    "image": "/Projects/CrossTalk/icon.png",
+    "mark": "crosstalk",
+    "gallery": [
+      "/Projects/CrossTalk/og.png",
+      "/Projects/CrossTalk/landing.jpg",
+      "/Projects/CrossTalk/example.jpg",
+      "/Projects/CrossTalk/nucleus.jpg"
+    ],
+    "stack": [
+      {
+        "name": "React",
+        "logo": "/Logos/Tools/react.png"
+      },
+      {
+        "name": "TypeScript",
+        "logo": "/Logos/Languages/typescript.png"
+      },
+      {
+        "name": "Three.js",
+        "logo": "/Logos/Tools/threejs.png"
+      },
+      {
+        "name": "Supabase",
+        "logo": "/Logos/Tools/supabase.png"
+      },
+      {
+        "name": "TanStack Start"
+      },
+      {
+        "name": "OpenRouter"
+      },
+      {
+        "name": "Spotify API",
+        "logo": "/Logos/Tools/spotify.png"
+      },
+      {
+        "name": "Apple Music API"
+      },
+      {
+        "name": "Tailwind CSS",
+        "logo": "/Logos/Tools/tailwind.png"
+      },
+      {
+        "name": "Vercel",
+        "logo": "/Logos/Tools/Vercel.png"
+      }
+    ],
+    "links": [
+      {
+        "label": "Try it live",
+        "url": "https://crosstalkfm.vercel.app",
+        "type": "website"
+      },
+      {
+        "label": "View code",
+        "url": "https://github.com/IsaacRoSosa/crosstalk",
+        "type": "github"
+      }
+    ]
+  },
+  {
+    "id": "noleetnoscroll",
+    "title": "No Leet No Scroll",
+    "summary": "A Chrome extension that keeps your social media locked until you've done your LeetCode for the day.",
+    "details": [
+      "The deal is simple: practice first, scroll later.",
+      "You choose the sites that distract you and set a daily goal of easy, medium and hard problems. Until you solve them, those sites show a \"Nuh uh!\" page with what you still owe. Once you're done, they open again.",
+      "It keeps a daily streak and gives you a couple of emergency passes a month for the days you really need them."
+    ],
+    "image": "/Projects/NoLeetNoScroll/character.png",
+    "mark": "noleetnoscroll",
+    "gallery": [
+      "/Projects/NoLeetNoScroll/promo.png",
+      "/Projects/NoLeetNoScroll/blocked.png",
+      "/Projects/NoLeetNoScroll/today.png",
+      "/Projects/NoLeetNoScroll/goals.png",
+      "/Projects/NoLeetNoScroll/unlocked.png"
+    ],
+    "stack": [
+      {
+        "name": "JavaScript",
+        "logo": "/Logos/Languages/javascript.png"
+      },
+      {
+        "name": "HTML",
+        "logo": "/Logos/Tools/html.png"
+      },
+      {
+        "name": "CSS",
+        "logo": "/Logos/Tools/css.png"
+      },
+      {
+        "name": "Chrome Extensions API"
+      }
+    ],
+    "links": [
+      {
+        "label": "Add to Chrome",
+        "url": "https://chromewebstore.google.com/detail/ookieeibmnnbmainnfjjgepekoeffmdm",
+        "type": "website"
+      }
+    ]
+  },
+  {
+    "id": "papalote",
+    "title": "Papalote Museum App",
+    "summary": "An iOS app for Papalote Museo del Niño with a 3D map and an AR scavenger hunt. Chosen as the best of six team projects.",
+    "details": [
+      "Built by a team of five to make museum visits more interactive for kids and families. The museum board picked it as the top project out of six competing teams.",
+      "Visitors explore a 3D map of the exhibits and play an AR scavenger hunt built with RealityKit, collecting virtual cards by interacting with real exhibits.",
+      "A custom CreateML model recognizes exhibits through the camera to unlock educational content, and Supabase saves each visitor's progress."
+    ],
+    "image": "/Projects/Papalote.png",
+    "gallery": [],
+    "stack": [
+      {
+        "name": "Swift",
+        "logo": "/Logos/Languages/swift.png"
+      },
+      {
+        "name": "RealityKit",
+        "logo": "/Logos/Tools/realityKit.png"
+      },
+      {
+        "name": "CreateML",
+        "logo": "/Logos/Tools/createML.png"
+      },
+      {
+        "name": "Supabase",
+        "logo": "/Logos/Tools/supabase.png"
+      },
+      {
+        "name": "Blender"
+      }
+    ],
+    "links": [
+      {
+        "label": "View code",
+        "url": "https://github.com/Saul0Delgado/MuseoPapaloteApp",
+        "type": "github"
+      },
+      {
+        "label": "Watch demo",
+        "url": "https://youtube.com/watch?v=dEMFlyClquY",
+        "type": "video"
+      }
+    ]
+  },
+  {
+    "id": "glucopredict",
+    "title": "GlucoPredict",
+    "summary": "An iOS app that predicts glucose trends so people with diabetes can plan meals and insulin ahead of time.",
+    "details": [
+      "Built for Swift Challenge Fest 2025. Instead of only tracking data, GlucoPredict uses CoreML to forecast blood sugar from meals, exercise and insulin doses.",
+      "Live Activities and widgets show updates at a glance, and a Gemini-powered meal planner suggests food that keeps glucose stable."
+    ],
+    "image": "/Projects/Gluco.png",
+    "gallery": [],
+    "stack": [
+      {
+        "name": "Swift",
+        "logo": "/Logos/Languages/swift.png"
+      },
+      {
+        "name": "CoreML",
+        "logo": "/Logos/Tools/createML.png"
+      },
+      {
+        "name": "WidgetKit",
+        "logo": "/Logos/Tools/widgetKit.png"
+      },
+      {
+        "name": "Gemini",
+        "logo": "/Logos/Tools/gemini.png"
+      },
+      {
+        "name": "FastAPI"
+      }
+    ],
+    "links": [
+      {
+        "label": "View code",
+        "url": "https://github.com/roccolpz/SwiftChallengeFest",
+        "type": "github"
+      }
+    ]
+  },
+  {
+    "id": "innovaction",
+    "title": "Innovaction Gym Dashboard",
+    "summary": "An admin dashboard for Innovaction Gym to schedule events and follow member attendance.",
+    "details": [
+      "A team of three built a central hub that replaced the gym's manual scheduling with a calendar interface for admins.",
+      "I integrated Chart.js so staff can see attendance trends and the most popular event locations in interactive charts.",
+      "React and TypeScript on the front end, Flask and MySQL on the back end, and Clerk for secure sign-in."
+    ],
+    "image": "/Projects/Innovaction.png",
+    "gallery": [
+      "/Projects/Innovaction/Innovaction.png",
+      "/Projects/Innovaction/Innovaction.jpeg"
+    ],
+    "stack": [
+      {
+        "name": "React",
+        "logo": "/Logos/Tools/react.png"
+      },
+      {
+        "name": "TypeScript",
+        "logo": "/Logos/Languages/typescript.png"
+      },
+      {
+        "name": "Vite",
+        "logo": "/Logos/Vite.png"
+      },
+      {
+        "name": "Flask",
+        "logo": "/Logos/Flask-logo.png"
+      },
+      {
+        "name": "MySQL",
+        "logo": "/Logos/Tools/mySql.png"
+      },
+      {
+        "name": "Chart.js"
+      }
+    ],
+    "links": [
+      {
+        "label": "View code",
+        "url": "https://github.com/Tect0r0/innovaction_dashboard",
+        "type": "github"
+      },
+      {
+        "label": "Watch demo",
+        "url": "https://youtu.be/YSj2ur-VW94",
+        "type": "video"
+      }
+    ]
+  }
+]

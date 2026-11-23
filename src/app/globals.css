@@ -1,14 +1,322 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-body {
-  background-color: #000319;
-  margin: 0;
-  padding: 0;
+/* Design tokens — Tailwind v4 reads these and generates utilities
+   (bg-paper, text-rust, font-display, etc.). No tailwind.config.js needed. */
+@theme static {
+  --color-paper: #1a1c15;
+  --color-paper-raised: #23261c;
+  --color-paper-sunk: #12140f;
+  --color-line: #3a3d2e;
+  --color-line-strong: #8a8a6e;
+  --color-ink: #f1ebd9;
+  --color-ink-soft: #bdb8a2;
+  --color-focus: #c9cbff;
+  --color-rust: #f08a58;
+  --color-on-wash: #26261d;
+
+  /* Watercolor washes */
+  --color-vermilion: #ee8a55;
+  --color-ochre: #f0c660;
+  --color-teal: #6bbcbc;
+  --color-rose: #f3bcb0;
+  --color-sky: #bcd8e6;
+  --color-butter: #f6e9b4;
+  --color-moss: #b4cf72;
+  --color-fern: #6dae7a;
+  --color-sage: #6fb88a;
+  --color-umber: #b88f68;
+  --color-mint: #c4e5c6;
+  --color-indigo: #9a9ce0;
+  --color-burgundy: #d27a80;
+
+  --font-sans: "Zen Kaku Gothic New", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces Variable", "Iowan Old Style", Georgia, serif;
+
+  --shadow-lift: 0 14px 32px -14px rgb(0 0 0 / 0.7);
+  --wash-blend: screen;
+
+  --animate-modal-in: modal-in 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+
+  --animate-rise: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-pop: pop 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-panel: panel 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+
+  --animate-nuh-wag: nuh-wag 3.2s ease-in-out infinite;
+
+  /* "Nuh uh": two quick wags from the wrist, then a rest */
+  @keyframes nuh-wag {
+    0%,
+    44%,
+    100% {
+      transform: rotate(0deg);
+    }
+    8% {
+      transform: rotate(-9deg);
+    }
+    16% {
+      transform: rotate(6deg);
+    }
+    24% {
+      transform: rotate(-7deg);
+    }
+    32% {
+      transform: rotate(4deg);
+    }
+    38% {
+      transform: rotate(-2deg);
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: scale(0.6) rotate(-20deg);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes panel {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+.logo-mono {
+  filter: brightness(0) invert(1) opacity(0.85);
 }
 
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  /* Paper grain over the whole page */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 0 0.1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    @apply bg-ochre text-ink;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-focus;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Scroll reveal (see components/ui/Reveal.jsx).
+   Elements start offset and transparent, then settle when data-shown is set. */
+@layer components {
+  .reveal {
+    transition:
+      opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal:not([data-shown]) {
+    opacity: 0;
+  }
+  .reveal[data-reveal="up"]:not([data-shown]) {
+    transform: translateY(20px);
+  }
+  .reveal[data-reveal="left"]:not([data-shown]) {
+    transform: translateX(-32px);
+  }
+  .reveal[data-reveal="right"]:not([data-shown]) {
+    transform: translateX(32px);
+  }
+  .reveal[data-reveal="scale"]:not([data-shown]) {
+    transform: scale(0.94);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal:not([data-shown]) {
+      opacity: 1;
+      transform: none !important;
+    }
+  }
+
+  /* Light sweep across an image on hover, used on project and hackathon cards */
+  .shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .shine::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 40%;
+    background: linear-gradient(to right, transparent, rgb(255 255 255 / 0.4), transparent);
+    transform: translateX(-120%) skewX(-20deg);
+    pointer-events: none;
+  }
+  .group:hover .shine::after {
+    transform: translateX(320%) skewX(-20deg);
+    transition: transform 0.9s ease;
+  }
+}
+
+/* Lava-lamp hero: each drop rises and sinks on its own path (--dy, --x1, --x2 set inline),
+   while an SVG goo filter makes the drops merge and split. */
+@keyframes lava {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(var(--x1), calc(var(--dy) * 0.45)) scale(1.18, 0.9); }
+  66% { transform: translate(var(--x2), calc(var(--dy) * 0.8)) scale(0.88, 1.14); }
+  100% { transform: translate(0, var(--dy)) scale(1); }
+}
+.lava-drop {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: lava var(--dur) ease-in-out var(--delay) infinite alternate;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lava-drop { animation: none; }
+}
+
+/* Hero background layer: faded behind the text (left) and at the top and bottom edges. */
+.lava-bg {
+  mask-image: linear-gradient(to right, rgb(0 0 0 / 0.12), rgb(0 0 0 / 0.4) 38%, #000 72%),
+    linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+  mask-composite: intersect;
+  -webkit-mask-image: linear-gradient(to right, rgb(0 0 0 / 0.12), rgb(0 0 0 / 0.4) 38%, #000 72%),
+    linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+  -webkit-mask-composite: source-in;
+}
+@media (max-width: 1023px) {
+  .lava-bg {
+    mask-image: linear-gradient(rgb(0 0 0 / 0.4), rgb(0 0 0 / 0.4)),
+      linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+    -webkit-mask-image: linear-gradient(rgb(0 0 0 / 0.4), rgb(0 0 0 / 0.4)),
+      linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+  }
+}
+
+/* Fade the sleeve art out toward the text on the left. */
+.sleeve-fade {
+  mask-image: linear-gradient(to right, transparent, #000 45%);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 45%);
+}
+
+/* JobHill mascot (components/marks/JobHillMark.jsx), same timings as in the JobHill app */
+.jm-mascot {
+  display: block;
+}
+.jm-wave-arm {
+  transform-box: view-box;
+  animation: jm-hello 2.4s ease-in-out infinite;
+}
+.jm-antennae {
+  transform-box: view-box;
+  animation: jm-wiggle 1.6s ease-in-out infinite;
+}
+.jm-eye {
+  transform-box: view-box;
+  animation: jm-blink 4.5s infinite;
+}
+.jm-head {
+  transform-box: view-box;
+  animation: jm-tilt 4s ease-in-out infinite;
+}
+@keyframes jm-hello {
+  0%, 55%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(-14deg); }
+  20%, 40% { transform: rotate(8deg); }
+}
+@keyframes jm-wiggle {
+  0%, 100% { transform: rotate(0); }
+  30% { transform: rotate(-6deg); }
+  60% { transform: rotate(4deg); }
+}
+@keyframes jm-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+@keyframes jm-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-3deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .jm-mascot,
+  .jm-mascot * {
+    animation: none !important;
+  }
+}

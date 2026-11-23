@@ -1,18 +1,11 @@
-import React from 'react'
-import styles from '@/styles/ExperienceSection.module.css'
-import ExperienceSlider  from './ExperienceSlider'
+import Section from "./ui/Section";
+import ExperienceTabs from "./ExperienceTabs";
+import experience from "@/data/experience.json";
 
-function ExperienceSection() {
+export default function ExperienceSection() {
   return (
-    <div id='Experience' className={styles.Container}>
-        <div className={styles.blackContainer}>
-        <div className={styles.ExperienceContainer}>
-                    <h1> Experience</h1>  
-                </div>
-                   <ExperienceSlider />
-        </div>    
-    </div>
-  )
+    <Section id="experience" title="Experience">
+      <ExperienceTabs items={experience} />
+    </Section>
+  );
 }
-
-export default ExperienceSection

@@ -1,24 +1,33 @@
-"use client"; // Asegúrate de añadir esta línea al comienzo del archivo
-import styles from "./page.module.css";
-import HeroSection from "@/components/HeroSection";
 import NavBar from "@/components/NavBar";
-import AboutMeSection from "@/components/AboutMeSection";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import ContactMeSection from "@/components/ContactMeSection";
-
-
+import HackathonsSection from "@/components/HackathonsSection";
+import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-   
-     
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
+      >
+        Skip to content
+      </a>
       <NavBar />
-     <HeroSection />
-      <AboutMeSection />
-      <ExperienceSection />
-      <ProjectsSection />
-    </main>
+      <main id="main" className="relative overflow-x-clip">
+        <HeroSection />
+        <AboutSection />
+        <div className="bg-linear-to-b from-transparent via-paper-sunk to-transparent">
+          <ExperienceSection />
+        </div>
+        <ProjectsSection />
+        <div className="bg-linear-to-b from-transparent via-paper-sunk to-transparent">
+          <HackathonsSection />
+        </div>
+        <ContactSection />
+      </main>
+    </>
   );
 }

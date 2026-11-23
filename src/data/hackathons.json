@@ -1,0 +1,108 @@
+[
+  {
+    "id": "hackmty-2023",
+    "event": "HackMTY 2023",
+    "project": "OptiFood",
+    "team": "Code Monkeys",
+    "date": "Sep 2023",
+    "result": "Top 10 of 130 teams",
+    "summary": "A pantry tracker that uses AI to suggest recipes built around the food that is about to expire.",
+    "details": [
+      "My first hackathon, at HackMTY, Mexico's largest student hackathon. I led a team of four to tackle household food waste.",
+      "Users register what's in their pantry along with expiration dates. Gemini generates recipes that prioritize ingredients close to expiring, and the app sends reminders before food goes bad."
+    ],
+    "image": "/Hacks/HackMTY2023.jpeg",
+    "links": [
+      {
+        "label": "Devpost",
+        "url": "https://devpost.com/software/optifood",
+        "type": "devpost"
+      },
+      {
+        "label": "View code",
+        "url": "https://github.com/JesusRam04/Hackathon2023",
+        "type": "github"
+      },
+      {
+        "label": "LinkedIn post",
+        "url": "https://www.linkedin.com/posts/isaacrojassosa_hackmty-hackathon-hackmty2023-ugcPost-7264884816125259776-gWwT",
+        "type": "linkedin"
+      }
+    ]
+  },
+  {
+    "id": "atrato-2024",
+    "event": "Atrato Hack",
+    "project": "Bamboo",
+    "team": "Codezilla",
+    "date": "Feb 2024",
+    "summary": "A finance chatbot that answers customer questions in Atrato's professional, supportive voice.",
+    "details": [
+      "Hackathon hosted by the fintech Atrato. We built Bamboo, a chatbot that answers questions about financial products, services and general financial literacy.",
+      "It was a hands-on introduction to the financial sector and to building conversational AI for customer service."
+    ],
+    "image": "/Hacks/Atrato.jpeg",
+    "links": [
+      {
+        "label": "View code",
+        "url": "https://github.com/davidballezaa/bamboo",
+        "type": "github"
+      }
+    ]
+  },
+  {
+    "id": "datathon-2024",
+    "event": "Datathon DSC",
+    "project": "Hey Banco support dashboard",
+    "team": "Montex",
+    "date": "May 2024",
+    "summary": "A customer-support dashboard for Hey Banco that surfaces response times and service bottlenecks.",
+    "details": [
+      "My first datathon, hosted by Tec de Monterrey's Data Science Club. We took Hey Banco's challenge to help them respond to customers faster.",
+      "We analyzed support data to find patterns and bottlenecks, and built a dashboard showing response times, customer satisfaction and agent performance."
+    ],
+    "image": "/Hacks/MontexTeam.jpeg",
+    "links": [
+      {
+        "label": "View code",
+        "url": "https://github.com/Tect0r0/dsc2024",
+        "type": "github"
+      },
+      {
+        "label": "Watch demo",
+        "url": "https://www.youtube.com/watch?v=n0gz5LrViM4",
+        "type": "video"
+      },
+      {
+        "label": "LinkedIn post",
+        "url": "https://www.linkedin.com/posts/isaacrojassosa_dathathon2024-datascience-heybanco-ugcPost-7194733515286978560-bKq1",
+        "type": "linkedin"
+      }
+    ]
+  },
+  {
+    "id": "lincehacks-2024",
+    "event": "LinceHacks",
+    "project": "OLLI App",
+    "team": "The MartIAns",
+    "date": "May 2024",
+    "summary": "An interactive map that predicts regional electricity consumption with 90% accuracy.",
+    "details": [
+      "Hackathon hosted by Universidad del Norte. We built OLLI, a platform that forecasts upcoming electricity use by region.",
+      "Machine learning models trained on historical consumption power an interactive map where users explore predictions by region and time period, helping authorities and residents plan energy use."
+    ],
+    "image": "/Hacks/TheMartIAns.jpeg",
+    "links": [
+      {
+        "label": "Devpost",
+        "url": "https://devpost.com/software/olli-app",
+        "type": "devpost"
+      },
+      {
+        "label": "View code",
+        "url": "https://github.com/santiagosauma/OLLI-APP",
+        "type": "github"
+      }
+    ]
+  }
+]
