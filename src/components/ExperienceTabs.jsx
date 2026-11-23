@@ -49,7 +49,7 @@ export default function ExperienceTabs({ items }) {
                   : "border-line text-ink-soft hover:text-ink md:border-transparent md:hover:bg-paper-raised"
               }`}
             >
-              {item.company}
+              {item.tab ?? item.company}
             </button>
           );
         })}
