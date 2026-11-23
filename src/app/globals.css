@@ -275,3 +275,48 @@
   mask-image: linear-gradient(to right, transparent, #000 45%);
   -webkit-mask-image: linear-gradient(to right, transparent, #000 45%);
 }
+
+/* JobHill mascot (components/marks/JobHillMark.jsx), same timings as in the JobHill app */
+.jm-mascot {
+  display: block;
+}
+.jm-wave-arm {
+  transform-box: view-box;
+  animation: jm-hello 2.4s ease-in-out infinite;
+}
+.jm-antennae {
+  transform-box: view-box;
+  animation: jm-wiggle 1.6s ease-in-out infinite;
+}
+.jm-eye {
+  transform-box: view-box;
+  animation: jm-blink 4.5s infinite;
+}
+.jm-head {
+  transform-box: view-box;
+  animation: jm-tilt 4s ease-in-out infinite;
+}
+@keyframes jm-hello {
+  0%, 55%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(-14deg); }
+  20%, 40% { transform: rotate(8deg); }
+}
+@keyframes jm-wiggle {
+  0%, 100% { transform: rotate(0); }
+  30% { transform: rotate(-6deg); }
+  60% { transform: rotate(4deg); }
+}
+@keyframes jm-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+@keyframes jm-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-3deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .jm-mascot,
+  .jm-mascot * {
+    animation: none !important;
+  }
+}

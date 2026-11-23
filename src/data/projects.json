@@ -9,11 +9,12 @@
       "Scrapers run on GitHub Actions to fetch new offers every 6 hours and re-check old ones every 12. Supabase handles authentication and keeps data in sync across devices."
     ],
     "image": "/Projects/JobHill.png",
+    "mark": "jobhill",
     "gallery": [
-      "/Projects/JobHill/JobHill.png",
-      "/Projects/JobHill/JobHill2.png",
-      "/Projects/JobHill/JobHill3.png",
-      "/Projects/JobHill/JobHill4.png"
+      "/Projects/JobHill/home.jpg",
+      "/Projects/JobHill/jobs.jpg",
+      "/Projects/JobHill/companies.jpg",
+      "/Projects/JobHill/applications.jpg"
     ],
     "stack": [
       {
